@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
