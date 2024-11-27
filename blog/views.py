@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 post = [
     {
         'author': 'Mirjana Cale',
