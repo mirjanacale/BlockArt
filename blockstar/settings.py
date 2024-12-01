@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net','.herokuapp.com','localhost','127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net'
+    'https://8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net',
 ]
 
 
