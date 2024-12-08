@@ -139,7 +139,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MEDIA_ROOT = '/workspace/BlockArt/media'
+MEDIA_ROOT = BASE_DIR / 'blog/media'
+
 MEDIA_URL = '/media/'
 
 # Default primary key field type
