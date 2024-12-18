@@ -30,7 +30,7 @@ class PostDetailView(DetailView):
     
 class PostCreateView( LoginRequiredMixin,CreateView):
     model = Post 
-    fields = ['title', 'content'] 
+    fields = ['title', 'content', ] 
     
 class PostUpdateView( LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post 
@@ -38,6 +38,7 @@ class PostUpdateView( LoginRequiredMixin, UserPassesTestMixin, UpdateView):
        
     
     def form_valid(self, form):
+        form.instance.status ='draft'
         form.instance.author = self.request.user
         return super().form_valid(form)  
     
