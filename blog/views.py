@@ -25,6 +25,9 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-created_on']
     
+def get_queryset(self):
+    return Post.objects.filter(status='published').order_by('-created_on')   
+    
 class PostDetailView(DetailView):
     model = Post
     
@@ -38,8 +41,8 @@ class PostUpdateView( LoginRequiredMixin, UserPassesTestMixin, UpdateView):
        
     
     def form_valid(self, form):
-        form.instance.status ='draft'
         form.instance.author = self.request.user
+        form.instance.status ='draft'
         return super().form_valid(form)  
     
     def test_func(self):

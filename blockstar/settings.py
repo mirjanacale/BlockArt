@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-tx9h4gfx#f*i=5g86=9mj(vzh%bgocy&epb0sr)-&23qgd+6i0
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net',
-                 '.herokuapp.com','localhost','127.0.0.1']
+                 '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net',
@@ -71,7 +71,7 @@ ROOT_URLCONF = 'blockstar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates', )],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
