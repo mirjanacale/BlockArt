@@ -15,6 +15,7 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,14 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tx9h4gfx#f*i=5g86=9mj(vzh%bgocy&epb0sr)-&23qgd+6i0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net',
-                 '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+    
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net',
