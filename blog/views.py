@@ -12,7 +12,7 @@ from .models import Post
 
 
 
-# Create your views here.
+# Create your views here.m
 def home(request):
     context={
         'posts': Post.objects.all()
@@ -31,18 +31,22 @@ def get_queryset(self):
 class PostDetailView(DetailView):
     model = Post
     
-class PostCreateView( LoginRequiredMixin,CreateView):
-    model = Post 
-    fields = ['title', 'content', ] 
-    
-class PostUpdateView( LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post 
     fields = ['title', 'content'] 
        
-    
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.status ='draft'
+        form.instance.status = 'draft'
         return super().form_valid(form)  
     
     def test_func(self):
@@ -51,7 +55,7 @@ class PostUpdateView( LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         return False
     
-class PostDeleteView( LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post  
     
     def test_func(self):
