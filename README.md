@@ -35,13 +35,35 @@
     -   #### Imagery
         -   The imagery used is from [Pexels](https://www.pexels.com/).
 
-*   ### Wireframes
+*  ## Wireframe
+***
 
-    -   Home Page Wireframe - [View]()
+<details open>
+<summary>Wireframe - Homepage Desktop & Mobile</summary>  
 
-    -   Mobile Wireframe - [View]()
+![homepage wireframe-mobile & desktop]()
+</details> 
+<details >
+<summary>Wireframe - Gallery page Desktop</summary>  
 
-    -   About Page Wireframe - [View]()
+![homepage wireframe-mobile & desktop]()
+</details> 
+<details>
+<summary>Wireframe - Gallery page Mobile</summary>  
+
+![homepage wireframe-mobile & desktop]()
+</details>    
+<details>
+<summary>Wireframe - SignUp page Desktop</summary>  
+
+![homepage wireframe-mobile & desktop]()
+</details> 
+<details>
+<summary>Wireframe - SignUp page Mobile</summary>  
+
+![homepage wireframe-mobile & desktop]()
+</details>              
+
 
 ## Features
 
@@ -57,8 +79,8 @@
 -   [CSS3](https://en.wikipedia.org/wiki/ Cascading_Style_Sheets)
 -   [](https://en.wikipedia.org/wiki/JavaScript)
 
--   [HTML5](https://en.wikipedia.org/wiki/HTML5)
--   [CSS3](https://en.wikipedia.org/wiki/ Cascading_Style_Sheets)
+-   [](https://en.wikipedia.org/wiki/HTML5)
+-   [](https://en.wikipedia.org/wiki/ Cascading_Style_Sheets)
 -   [](https://en.wikipedia.org/wiki/JavaScript)
 
 
@@ -151,7 +173,7 @@ Follow these steps to deploy the Pet Pals Picker game on Heroku:
 - In your app's settings, navigate to the "Config Vars" section.
 - Click on "Reveal Config Vars" and add the following variables:
   - PORT: Set the value to 8000.
-  - Any other confidential credentials or configuration settings required by the game.
+  - Any other confidential credentials or configuration settings required by the blog.
 3. Add Buildpacks
 - In the "Buildpacks" section, add the following buildpacks in the specified order:
   - Python
@@ -167,7 +189,7 @@ Follow these steps to deploy the Pet Pals Picker game on Heroku:
 - Enable automatic deploys for continuous deployment.
 6. Deploy Your App
 - Trigger a manual deployment by clicking "Deploy Branch" or wait for automatic deployments to occur.
-- Once deployed successfully, your Snake Game will be accessible via the provided Heroku URL.
+- Once deployed successfully, your blog will be accessible via the provided Heroku URL.
 
 
 
