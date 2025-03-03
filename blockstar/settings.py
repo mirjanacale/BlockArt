@@ -84,7 +84,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blockart.wsgi.application'
+WSGI_APPLICATION = 'blockstar.wsgi.application'
 
 MIME_TYPES = {
     'css': 'text/css',
