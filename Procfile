@@ -1,1 +1,1 @@
-web: gunicorn blockstar.wsgi
+web: gunicorn BlockArt.wsgi 
