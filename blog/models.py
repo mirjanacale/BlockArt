@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
 
@@ -16,9 +17,11 @@ class Post(models.Model):
     status = models.CharField(
         max_length=10,
         choices=STATUS_CHOICES,
-        default='draft'  # Set a default value
+        default='draft'   
     )
-    
+
+    # Add the CloudinaryField for image storage
+    featured_image = CloudinaryField('image', default='placeholder')
     
     def __str__(self):
         return self.title
