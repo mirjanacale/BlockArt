@@ -20,7 +20,7 @@ def create_profile(sender, instance, created, **kwargs):
         with the User. The Profile instance's user field is set to the User
         instance, and the Profile instance is then saved.
         """
-        Profile.objects.create(user=instance)
+        Profile.objects.get_or_create(user=instance)
         
         
 @receiver(post_save, sender=User)
