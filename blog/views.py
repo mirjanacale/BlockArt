@@ -6,7 +6,9 @@ from .forms import PostForm
 
 # Home View - Shows only published posts
 def home(request):
-    return render(request, 'blog/home.html', {'posts': Post.objects.filter(status='published').order_by('-created_on')})
+    return render(request, 'blog/home.html',
+                  {'posts': Post.objects.filter(
+                      status='published').order_by('-created_on')})
 
 # Post List View
 class PostListView(ListView):
