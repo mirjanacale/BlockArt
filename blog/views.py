@@ -14,6 +14,7 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-created_on']
+    paginate_by = 2
 
     def get_queryset(self):
         return Post.objects.filter(status='published')
