@@ -1,21 +1,21 @@
-
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
-<div class="container text-center">
+<div class="container text-center content-section">
     <h1 class="mb-4">About ArtBlock</h1>
-    <img src="{{ MEDIA_URL }}about-image.jpg" class="img-fluid rounded shadow-lg mb-4" alt="ArtBlock inspiration" style="max-width: 80%;">
     <p class="lead">
         ArtBlock is a space for artists and creatives to break through creative blocks. Whether you're looking for inspiration, 
         sharing your work, or engaging with fellow artists, ArtBlock is here to support your journey.
     </p>
-    <p>
+  
+    <img src="https://res.cloudinary.com/dyemjyefz/image/upload/v1741186258/IMG_20210409_210437_4_solia7.jpg"
+    class="img-fluid rounded shadow-lg mb-4" 
+    alt="ArtBlock inspiration" 
+    style="max-width: 80%;">
+
+      <p>
         This blog is dedicated to showcasing artwork, offering tips, and encouraging creativity. Feel free to explore, comment, 
         and connect with other artists. Let's turn inspiration into masterpieces together!
     </p>
 </div>
 {% endblock content %}
-
-
-
-
-
