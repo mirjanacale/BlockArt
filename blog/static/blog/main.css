@@ -1,8 +1,9 @@
-body {
-    background: #f5f5f5;
-    color: #333333;
-    margin-top: 5rem;
-  }
+body { 
+  background: url('https://res.cloudinary.com/dyemjyefz/image/upload/v1741279258/peakpx_6_g8veul.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333333;
+  margin-top: 5rem;     
+}
   
   h1, h2, h3, h4, h5, h6 {
     color: #222222;
@@ -13,7 +14,7 @@ body {
   }
   
   .bg-steel {
-    background-color: #d9534f;
+    background-color: #103d33;
   }
   
   .site-header .navbar-nav .nav-link {
@@ -29,7 +30,7 @@ body {
   }
   
   .content-section {
-    background: #5bc0de;
+    background: #f7f5f5;
     padding: 10px 20px;
     border: 1px solid #cccccc;
     border-radius: 3px;
@@ -62,7 +63,7 @@ body {
   }
   
   .article-metadata a:hover {
-    color: #007bff;
+    color: #103d33;
     text-decoration: none;
   }
   
