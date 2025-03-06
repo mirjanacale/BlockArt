@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dyemjyefz/image/upload/https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/apple-touch-icon_ammx5s.png/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dyemjyefz/image/upload/https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/favicon-32x32_zx3pmg.png/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dyemjyefz/image/upload/https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/favicon_vhnm2d.ico/favicon-16x16.png">
-    <link rel="manifest" href="https://res.cloudinary.com//radyemjyefzw/upload/https://res.cloudinary.com/dyemjyefz/raw/upload/v1741288631/site_rmwdze.webmanifest/site.webmanifest">   
-
+    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/apple-touch-icon_ammx5s.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/favicon-32x32_zx3pmg.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/favicon-16x16.png">
+    <link rel="manifest" href="https://res.cloudinary.com/dyemjyefz/raw/upload/v1741288631/site_rmwdze.webmanifest">
+       
     {% if title %}
         <title>{{ title }} - Blog</title>
     {% else %}
@@ -28,10 +28,12 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand mr-4" href="{% url 'blog-home' %}"> ArtBlog</a>
+                <a class="navbar-brand mr-4" href="{% url 'blog-home' %}"> 
+                <img src="https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/favicon-32x32_zx3pmg.png"> ArtBlog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
+                
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
@@ -89,6 +91,13 @@
             </div>
         </div>
     </main>
+
+    <footer class="bg-dark text-light py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">Copyright © 2025 ArtBlog</p>
+        </div>
+    </footer>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
