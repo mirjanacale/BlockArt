@@ -20,17 +20,18 @@ class Post(models.Model):
         choices=STATUS_CHOICES,
         default='draft'   
     )
+    likes = models.ManyToManyField(User, related_name='blog_posts', blank=True)
 
-    # Add the CloudinaryField for image storage
-
-
-    
     def __str__(self):
         return self.title
     
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
-    
-    
+
+    def total_likes(self):
+        return self.likes.count()
+
+
+
     
     

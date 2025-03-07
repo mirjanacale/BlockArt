@@ -19,6 +19,17 @@
             <h2 class="article-title">{{ object.title }}</h2>
             <p class="article-content">{{ object.content }}</p>
             </div>
+            <div>
+                <form action="{% url 'like-post' object.id %}" method="POST">
+                    {% csrf_token %}
+                    {% if user in object.likes.all %}
+                        <button type="submit" class="btn btn-danger">Unlike</button>
+                    {% else %}
+                        <button type="submit" class="btn btn-primary">Like</button>
+                    {% endif %}
+                </form>
+                <p>{{ object.total_likes }} likes</p>
+            </div>
         </article>
 {% endblock content %}
 
