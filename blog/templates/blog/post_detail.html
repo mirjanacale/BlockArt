@@ -1,14 +1,14 @@
 
 {% extends 'blog/base.html' %}
 {% block content %}
-<h1>Posts</h1>  
+<h1>Post Details</h1>  
    
         <article class="media content-section">
             <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
             <div class="media-body">
             <div class="article-metadata">
                 <a class="mr-2" href="#">{{ object.author }}</a>
-                <small class="text-muted">{{ object.date_posted | date:"F d, Y" }}</small>
+                <small class="text-muted">{{ object.created_on | date:"F d, Y" }}</small>
                 {% if object.author == user %}
                     <div>
                     <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>

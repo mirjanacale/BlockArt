@@ -80,6 +80,9 @@ def like_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
+        print(f"User {request.user} unliked post {post.id}")
     else:
         post.likes.add(request.user)
+        print(f"User {request.user} liked post {post.id}")
+        print(f"Total likes: {post.likes.count()}")
     return redirect('post-detail', pk=pk)
