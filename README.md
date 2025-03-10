@@ -138,6 +138,15 @@ This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, v
     -   Admin users can delete blog posts.
 ![admin page](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563344/Screenshot_2025-03-07_210202_dicsl6.png)
 
+- **Interactive Elements**:
+
+  - **CRUD Operations**: Enables users to leave feedback or insights about their experience with the tool. 
+    - Users can post likes after logging in, fostering community engagement and discussions.
+    -Likes include success/error messages for transparency.
+    ![Comment Success ](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599075/Screenshot_2025-03-07_205540_zyf1eg.png)
+   
+
+
 
 
 ## Technologies Used
