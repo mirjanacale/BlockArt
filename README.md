@@ -6,6 +6,22 @@
 
 <img src='https://res.cloudinary.com/dyemjyefz/image/upload/v1741535124/Screenshot_2025-03-09_154028_tstkg9.png'></h2>
 
+# 🎨 ArtBlock – Unleash Your Creativity  
+
+Are you an artist struggling with **creative block**? Or maybe you’re looking for **inspiration, feedback, and a supportive community**? **ArtBlock** is the perfect place for you!  
+
+## 🌟 Why Use ArtBlock?  
+
+✅ **Inspiration at Your Fingertips** – Browse unique artwork to spark new ideas.  
+✅ **Showcase Your Art** – Upload your own paintings and share your creativity.  
+✅ **Engaging Community** – Connect with fellow artists and receive valuable feedback.  
+✅ **Easy & Accessible** – Works on all devices, so you can explore anytime, anywhere.  
+✅ **Seamless Image Hosting** – Powered by **Cloudinary**, ensuring high-quality image storage.  
+
+---
+
+🚀 **Join ArtBlock today and let your creativity flow!**  
+
 ## User Experience (UX)
 
 -   ### User stories
@@ -22,8 +38,11 @@
         3. As a Returning Visitor, I want to find community links.
  -   #### Frequent User Goals
         1. As a Frequent User, I want to check to see if there are any new blog posts.
-        
-       
+- ### Database planning 
+<hr>  
+  Database Structure     
+     
+![admin page](https://res.cloudinary.com/dyemjyefz/image/upload/v1741597522/Screenshot_2025-03-10_085828_o4tgp0.png)  
 -   ### Design
     -  ## 🎨 ArtBlog Color Scheme
 
@@ -37,7 +56,10 @@
 
 This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, vintage, and artistic** look! 🎨✨
 
--   #### Typography
+
+- Images  what are used are from mayself and my dother.
+
+   #### Typography
 
  -   The fonts used are [Open Sans](https://fonts.google.com/specimen/Open+Sans) and [Lato](https://fonts.google.com/specimen/Lato).
    
@@ -177,7 +199,7 @@ This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, v
 - [Claude3.5](https://claude.ai/)
   - For insightful explanations of topic. 
 - [ YouTube](https://www.youtube.com/) 
-  - For tutorials and other learnigs. 
+  - For tutorials and other learnigs.
 
 
 
@@ -185,7 +207,21 @@ This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, v
 
 - HTML
     - Results of HTML official[W3C validator] (https://validator.w3.org/).
-     
+
+    <hr>
+
+| File         | Preview |
+|-------------|---------|
+| `base.html`  | ![base.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599020/base.html_wug6vn.png) |
+| `about.html`   | ![about.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599016/about.html_jpz6b9.png) |
+| `post confirm delete.html`   | ![post_confirm_delete.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599034/p_c_delete.html_rfk5mt.png) |
+| `post detail.html`  | ![post_detail.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599039/post_dital.html_ibqpmy.png) |
+| `post form.html` | ![post_form.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599044/post_form.html_fcg0th.png) |
+| `password_reset_complete.html`  | ![password_reset_complete.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599044/post_form.html_fcg0th.png) |
+
+
+
+
       ![HTML Validator]()
 
     | HTML Source Code/Page | Pass | Errors| Warnings
@@ -195,7 +231,7 @@ This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, v
     | Profile| Yes | 0 |0
     | Register | Yes | 0 |0
     | Admin | Yes | 0 |0
-    | Password Reset | no | 0 |0
+    | Password Reset | No | 0 |0
     | Log In | Yes| 0 |0
     | Logout | Yes | 0 |0
     | Register | Yes | 0 |0
@@ -237,7 +273,7 @@ This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, v
 
 ### Lighthouse Scores
 
-Lighthouse testing was carried out in Incognito mode to acheive the best results.
+Lighthouse testing was carried out using the [Chrome DevTools](https://developers.google.com/web/tools/lighthouse/).
 
 
 | File         | Preview |
@@ -269,9 +305,9 @@ Lighthouse testing was carried out in Incognito mode to acheive the best results
  3. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
 
  3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their following on social media to determine how trusted and known they are.
- 1. Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Loved So Much section.
- 2. The user can also scroll to the bottom of any page on the site to locate social media links in the footer.
- 3. At the bottom of the Contact Us page, the user is told underneath the form, that alternatively they can contact the organisation on social media which highlights the links to them.
+ 1. Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Different section.
+ 2. The user can also notes of any pages is locate social media links .
+ 3. At the bottom of the Contact Us page is a copyright statement.
 
 -   #### Returning Visitor Goals
 
@@ -281,7 +317,7 @@ Lighthouse testing was carried out in Incognito mode to acheive the best results
 
     1. As a Frequent User, I want to check to see if there are any newly new blog posts.
 
-        1. The user would already be comfortable with the website layout and can easily click the banner message.
+        1. The user would already be comfortable with the website layout and can easily click the blog link to see any new message.
 
     2. As a Frequent User, I want to check to see if there are any new blog posts.
 
@@ -297,17 +333,12 @@ Lighthouse testing was carried out in Incognito mode to acheive the best results
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ## Bugs
+-  Bug is found in the password reset form, the usrr get massage but not redirected to the login page.
 
-| PASSWORD RESET | ![APPS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570443/Screenshot_2025-03-07_210331_zuzeq2.png) |
-| APP PASSWORD | ![VIEWS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570392/Screenshot_2025-03-08_230626_dkifuk.png) |
+| PASSWORD RESET | ![APPS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570443/Screenshot_2025-03-07_210331_zuzeq2.png) 
+| APP PASSWORD | ![VIEWS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570392/Screenshot_2025-03-08_230626_dkifuk.png) 
+
 <hr>
-
- ### Known Bugs 
- There is an error in Sign up form, as per my research it seem to be due to the summernote and its rendering. I spend quite time trying to solve it but with no luck, will keep trying but for now the site works perfectly, sign in and out also functions without trouble. 
- ![Sing Up Error](/documentation/testing/errors_sing_up.png)
- 
-
--
 
 ## Deployment
 This project utilizes [Heroku](http://heroku.com) , for deployment, allowing developers to build, run, and manage applications in the cloud.
@@ -347,11 +378,11 @@ Follow these steps to deploy the ArtBlog on Heroku:
 
 The site was deployed to GitHub Pages. The steps to deploy are as follows:
 
-- In the [GitHub repository](), navigate to the Settings tab
+- In the [GitHub repository](https://github.com/mirjanacale/BlockArt), navigate to the Settings tab
 - From the source section drop-down menu, select the **Main** Branch, then click "Save".
 - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found [here](.com/)
+The live link can be found [here](https://mirjanablog-09220d34d6de.herokuapp.com/)
 
 ### Local Deployment
 
@@ -361,7 +392,7 @@ This project can be cloned or forked in order to make a local copy on your own s
 
 You can clone the repository by following these steps:
 
-1. Go to the [GitHub repository]()
+1. Go to the [GitHub repository](https://github.com/mirjanacale/BlockArt)
 2. Locate the Code button above the list of files and click it
 3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
 4. Open Git Bash or Terminal
