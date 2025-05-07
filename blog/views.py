@@ -63,6 +63,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
+    template_name = 'blog/post_confirm_delete.html'
     success_url = '/'
 
     def test_func(self):
@@ -90,3 +91,8 @@ def like_post(request, pk):
     return redirect('post-detail', pk=pk)
 
 # Search View
+def test_func(self):
+    obj = self.get_object()
+    if self.request.user != obj.author:
+        print(f"[SECURITY] User {self.request.user} tried to delete post {obj.id} by {obj.author}")
+    return self.request.user == obj.author
