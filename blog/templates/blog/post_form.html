@@ -6,7 +6,19 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Blog Post</legend>
-                {{ form|crispy }}  <!-- Make sure 'featured_image' is in your form -->
+                {% if form.errors %}
+  <div class="alert alert-danger">
+    <strong>Oops! Please fix the errors below:</strong>
+    {{ form.errors }}
+  </div>
+{% endif %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  
+                {{ form|crispy }}  
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Post</button>

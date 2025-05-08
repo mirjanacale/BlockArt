@@ -43,6 +43,11 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        print("Form validation failed:", form.errors)
+        return super().form_invalid(form)
+ 
 
 # Update Post View
 
@@ -54,6 +59,10 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        print("Form validation failed:", form.errors)
+        return super().form_invalid(form)
 
     def test_func(self):
         return self.request.user == self.get_object().author
