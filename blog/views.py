@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from .forms import PostForm
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, \
@@ -47,7 +48,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     def form_invalid(self, form):
         print("Form validation failed:", form.errors)
         return super().form_invalid(form)
- 
+    
 
 # Update Post View
 
@@ -59,7 +60,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-    
+      
     def form_invalid(self, form):
         print("Form validation failed:", form.errors)
         return super().form_invalid(form)
@@ -92,14 +93,14 @@ def like_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
-        print(f"User {request.user} unliked post {post.id}")
+        messages.info(request, 'You unliked this post.')
     else:
         post.likes.add(request.user)
-        print(f"User {request.user} liked post {post.id}")
-        print(f"Total likes: {post.likes.count()}")
+        messages.success(request, 'You liked this post!')
     return redirect('post-detail', pk=pk)
 
 # Search View
+
 def test_func(self):
     obj = self.get_object()
     if self.request.user != obj.author:
