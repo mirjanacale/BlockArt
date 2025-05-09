@@ -48,15 +48,31 @@ The platform features:
 - Update their profile picture
 - Explore and engage with new content regularly
 
+##  Agile User Stories
+
+The following user stories were planned and tracked using GitHub Projects during development:
+
+| ID  | User Story                                                                            | Status      |
+|-----|----------------------------------------------------------------------------------------|-------------|
+| US1 | As a new visitor, I want to register so that I can start posting and liking content.  |  Completed |
+| US2 | As a user, I want to log in and manage my profile and posts.                          |  Completed |
+| US3 | As a user, I want to create blog posts with images.                                   |  Completed |
+| US4 | As a user, I want to like or unlike posts.                                            |  Completed |
+| US5 | As a user, I want to edit and delete my posts.                                        |  Completed |
+| US6 | As a user, I want to upload a profile picture.                                        |  Completed |
+| US7 | As a user, I want to reset my password securely.                                      |  Completed |
+| US8 | As a user, I want to view other artists’ posts without logging in.                    |  Completed |
+| US9 | As a user, I want to receive feedback on my work.                                     |  Planned   |
+| US10| As a user, I want to bookmark posts to view them later.                               |  Planned   |
 
  
 - ### Database planning 
 <hr>  
   Database Structure     
      
-![admin page](https://res.cloudinary.com/dyemjyefz/image/upload/v1741597522/Screenshot_2025-03-10_085828_o4tgp0.png)  
+![admin page](https://res.cloudinary.com/dyemjyefz/image/upload/v1746831200/chart_tgvyw5.png)  
 -   ### Design
-    -  ## 🎨 ArtBlog Color Scheme
+    -  ##  BlockArt Color Scheme
 
 | Element      | Color Code | Description |
 |-------------|------------|-------------|
@@ -66,7 +82,7 @@ The platform features:
 | **Text** | `#2D2D2D` | Deep Charcoal (Headings, Body Text) |
 | **Secondary** | `#B0302D` | Rich Red (Icons, Hover Effects) |
 
-This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, vintage, and artistic** look! 🎨✨
+This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, vintage, and artistic** look! ✨
 
 
 - Images  what are used are from mayself and my dother.
@@ -76,7 +92,7 @@ This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, v
  -   The fonts used are [Open Sans](https://fonts.google.com/specimen/Open+Sans) and [Lato](https://fonts.google.com/specimen/Lato).
    
 
-*  ## Wireframe
+  ## Wireframe
 ***
 
 <details open>
@@ -241,24 +257,24 @@ This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, v
 | `password_reset_complete.html`  | ![password_reset_complete.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599044/post_form.html_fcg0th.png) |
 
 
+##  HTML Validation
 
+All HTML files were tested using the [W3C Markup Validation Service](https://validator.w3.org/). The results are as follows:
 
-      ![HTML Validator]()
+| Page                   | Valid | Errors | Warnings |
+|------------------------|:-----:|:------:|:--------:|
+| Home                   | ✅    |   0    |    0     |
+| About                  | ✅    |   0    |    0     |
+| Profile                | ✅    |   0    |    0     |
+| Register               | ✅    |   0    |    0     |
+| Admin                  | ✅    |   0    |    0     |
+| Password Reset         | ✅    |   0    |    0     |
+| Login                  | ✅    |   0    |    0     |
+| Logout                 | ✅    |   0    |    0     |
+| Error 403              | ✅    |   0    |    0     |
+| Error 404              | ✅    |   0    |    0     |
+| Error 500              | ✅    |   0    |    0     |
 
-    | HTML Source Code/Page | Pass | Errors| Warnings
-    | ---- | ------ | -------- | -------- |
-    | Home | Yes | 0 |0
-    | About | Yes | 0 |0
-    | Profile| Yes | 0 |0
-    | Register | Yes | 0 |0
-    | Admin | Yes | 0 |0
-    | Password Reset | No | 0 |0
-    | Log In | Yes| 0 |0
-    | Logout | Yes | 0 |0
-    | Register | Yes | 0 |0
-    | Error 403 | Yes | 0 |0
-    | Error 404 | Yes | 0 |0
-    | Error 500 |  | 0 |0
 
   <hr>  
 
@@ -313,36 +329,47 @@ Lighthouse testing was carried out using the [Chrome DevTools](https://developer
 
 ### Testing User Stories from User Experience (UX) Section
 
--   #### First Time Visitor Goals
+##  UX Testing Based on User Stories
 
- 1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the an organisation.
+The following user goals were identified and tested to ensure a smooth experience across different user types.
 
- 1. The blog has been designed to be informative and easy to navigate. The main purpose of the site is to help the organisation understand what they do and how they do it better.
+---
 
- 2. As a First Time Visitor, I want to be able to easily be able to navigate throughout the site to find content.
+### 🔹 First-Time Visitor Goals
 
- 1. The blog has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what the page they will end up at clearly.
- 2. At the bottom of the first 2 pages there is a redirection call to action to ensure the user always has somewhere to go and doesn't feel trapped as they get to the bottom of the page.
- 3. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
+**Goal:** Understand the site's purpose  
+-  The home page explains that BlockArt is a space for artists to share their work. The title, tagline, and sample posts are visible without logging in.
 
- 3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their following on social media to determine how trusted and known they are.
- 1. Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Different section.
- 2. The user can also notes of any pages is locate social media links .
- 3. At the bottom of the Contact Us page is a copyright statement.
+**Goal:** Navigate easily  
+-  A clean navigation bar is present on every page. All main routes (Home, Register, Login, About) are clearly labeled and accessible.
 
--   #### Returning Visitor Goals
+**Goal:** View content without logging in  
+- Posts from other users are visible on the home page even if not logged in.
 
-    1. As a Returning Visitor, I want to find information about the artist and their work.
-    
--   #### Frequent User Goals
+---
 
-    1. As a Frequent User, I want to check to see if there are any newly new blog posts.
+### 🔹 Returning Visitor Goals
 
-        1. The user would already be comfortable with the website layout and can easily click the blog link to see any new message.
+**Goal:** Log in and manage posts  
+-  A registered user can log in, access the profile page, view their own posts, and create or update new ones.
 
-    2. As a Frequent User, I want to check to see if there are any new blog posts.
+**Goal:** Browse new content  
+-  The home page shows the latest posts sorted by creation date.
 
-        1. The user would already be comfortable with the website layout and can easily click the blog link
+---
+
+### 🔹 Frequent User Goals
+
+**Goal:** Create new posts  
+-  Authenticated users can create blog posts via a simple form with validation and image upload.
+
+**Goal:** Like posts and engage  
+-  Users can like and unlike posts. The like count updates correctly. Messages appear confirming the action.
+
+**Goal:** Update profile  
+-  Users can update their profile image. The change is saved and displayed throughout the site.
+
+<hr>
 
 
 
@@ -353,13 +380,43 @@ Lighthouse testing was carried out using the [Chrome DevTools](https://developer
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
-## Bugs
--  Bug is found in the password reset form, the usrr get massage but not redirected to the login page.
+## Bugs fixed
+
+| BUGS FIXED | PREVIEW |
+
+ - fix: disable SMTP and enforce console email backend to prevent connection errors
+ - fix: Removed SMTP settings to avoid WinError 10061 and ensured console email backend is used for password reset in local testing.
 
 | PASSWORD RESET | ![APPS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570443/Screenshot_2025-03-07_210331_zuzeq2.png) 
-| APP PASSWORD | ![VIEWS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570392/Screenshot_2025-03-08_230626_dkifuk.png) 
+|  PASSWORD  RESET | ![VIEWS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1746829065/Screenshot_2025-05-09_225405_ppff57.png) 
 
 <hr>
+
+##  Future Features
+
+The following features are not part of the current MVP but are planned for future development:
+
+- **Comments on posts**  
+  Users will be able to leave comments under each post to offer feedback or discuss artwork.
+
+- **User following**  
+  Users will be able to follow their favorite artists and see their latest posts in a dedicated feed.
+
+- **Search functionality**  
+  Add a search bar to find posts by keywords, titles, or artist names.
+
+- **Trending posts**  
+  Display posts with the most likes in a separate section for popular content.
+
+- **Bookmark posts**  
+  Users can save favorite posts to view later from their profile.
+
+- **Report content**  
+  Allow users to report inappropriate or abusive content, which can be reviewed by an admin.
+
+- **Tags and filters**  
+  Posts can be organized by tags or categories for easier discovery.
+
 
 ## Deployment
 This project utilizes [Heroku](http://heroku.com) , for deployment, allowing developers to build, run, and manage applications in the cloud.

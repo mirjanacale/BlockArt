@@ -101,6 +101,7 @@ def like_post(request, pk):
 
 # Search View
 
+
 def test_func(self):
     obj = self.get_object()
     if self.request.user != obj.author:
