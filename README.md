@@ -6,9 +6,17 @@
 
 <img src='https://res.cloudinary.com/dyemjyefz/image/upload/v1741535124/Screenshot_2025-03-09_154028_tstkg9.png'></h2>
 
-# 🎨 ArtBlock – Unleash Your Creativity  
+# 🎨 BlockArt – A Community Blog for Artists
 
-Are you an artist struggling with **creative block**? Or maybe you’re looking for **inspiration, feedback, and a supportive community**? **ArtBlock** is the perfect place for you!  
+BlockArt is a full-stack blog application built with Django, where visual artists can post, share, and interact with creative content. It’s designed to help users overcome creative blocks by browsing others’ posts, receiving feedback, and maintaining their own digital gallery.
+
+The platform features:
+- User authentication and profile management
+- Post creation, editing, and deletion (CRUD)
+- Like functionality to engage with other artists’ work
+- Clean, mobile-friendly interface
+- Image hosting via Cloudinary
+
 
 ## 🌟 Why Use ArtBlock?  
 
@@ -20,24 +28,28 @@ Are you an artist struggling with **creative block**? Or maybe you’re looking 
 
 ---
 
-🚀 **Join ArtBlock today and let your creativity flow!**  
+ **Join ArtBlock today and let your creativity flow!**  
 
 ## User Experience (UX)
+<hr>
 
--   ### User stories
+### First-Time Visitors
+- Understand the purpose of ArtBlock at a glance
+- View public art posts without needing to log in
+- Register for an account to join the community
 
- -   #### First Time Visitor Goals
+### Returning Users
+- Log in quickly and access their posts
+- Browse recent posts and find inspiration
+- Like other users' artwork
 
-        1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
-        2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
-        3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
-  -   #### Returning Visitor Goals
+### Frequent Users
+- Create, edit, and delete their own blog posts
+- Update their profile picture
+- Explore and engage with new content regularly
 
-        1. As a Returning Visitor, I want to find information about the organisation.
-        2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
-        3. As a Returning Visitor, I want to find community links.
- -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any new blog posts.
+
+ 
 - ### Database planning 
 <hr>  
   Database Structure     
@@ -99,7 +111,7 @@ This color scheme defines the aesthetic of **ArtBlog**, giving it a **classic, v
 ## Features
 
 - ### Home Page
-    - The landing page features a simple and clean design that provides an intuitive layout. Its goal is to help users understand the organization’s mission and strengths clearly.
+    - Lists all published blog posts
 ![home.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563565/Screenshot_2025-03-07_205640_nwq4qw.png)
 
 
