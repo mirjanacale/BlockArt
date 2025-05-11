@@ -127,13 +127,13 @@ This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, 
 ## Features
 
 - ### Home Page
-    - Lists all published blog posts
+- Lists all published blog posts
 ![home.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563565/Screenshot_2025-03-07_205640_nwq4qw.png)
 
 
 - ### About Page
     - The about page maintains a clean and minimalist design for easy readability. It offers a concise description of the organization’s values and approach.
-- ![about.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563301/Screenshot_2025-03-07_205721_uajgpw.png)
+ ![about.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563301/Screenshot_2025-03-07_205721_uajgpw.png)
 
 - ### New Post Page
 
@@ -263,20 +263,59 @@ All HTML files were tested using the [W3C Markup Validation Service](https://val
 
 | Page                   | Valid | Errors | Warnings |
 |------------------------|:-----:|:------:|:--------:|
-| Home                   | ✅    |   0    |    0     |
-| About                  | ✅    |   0    |    0     |
-| Profile                | ✅    |   0    |    0     |
-| Register               | ✅    |   0    |    0     |
-| Admin                  | ✅    |   0    |    0     |
-| Password Reset         | ✅    |   0    |    0     |
-| Login                  | ✅    |   0    |    0     |
-| Logout                 | ✅    |   0    |    0     |
-| Error 403              | ✅    |   0    |    0     |
-| Error 404              | ✅    |   0    |    0     |
-| Error 500              | ✅    |   0    |    0     |
+| Home                   |    |   0    |    0     |
+| About                  |    |   0    |    0     |
+| Profile                |    |   0    |    0     |
+| Register               |    |   0    |    0     |
+| Admin                  |    |   0    |    0     |
+| Password Reset         |    |   0    |    0     |
+| Login                  |    |   0    |    0     |
+| Logout                 |    |   0    |    0     |
 
 
-  <hr>  
+  <hr> 
+
+  ##  Custom Error Pages
+
+The BlockArt project includes fully custom-designed error pages to ensure a smooth and branded user experience, even during failures.
+
+### Implemented Errors:
+
+| Code | Description            |
+|------|------------------------|
+| 403  | Forbidden              |
+| 404  | Page Not Found         |
+| 500  | Internal Server Error  |
+
+Each template extends the base layout, uses consistent colors and styling, and includes helpful messages and navigation.
+
+---
+
+###  Examples
+
+#### 404 – Page Not Found  
+When a user accesses a missing page:
+
+![404 Error Page](https://res.cloudinary.com/dyemjyefz/image/upload/v1746998155/Screenshot_2025-05-11_210413_biezbh.png)
+
+#### 403 – Forbidden  
+When permission is denied (e.g., accessing someone else's post):
+
+![403 Error Page](https://res.cloudinary.com/dyemjyefz/image/upload/v1746997795/Screenshot_2025-05-11_213306_xzhvba.png)
+
+#### 500 – Server Error  
+When something unexpected crashes:
+
+![500 Error Page](https://res.cloudinary.com/dyemjyefz/image/upload/v1746997787/Screenshot_2025-05-11_210057_miztfh.png)
+
+---
+
+###  Testing Summary
+
+Error templates were tested locally using debug routes and `DEBUG = False`. After verification, test routes were removed from the project before final deployment.
+
+All error templates are stored in:
+ 
 
 - CSS 
      - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) validator.

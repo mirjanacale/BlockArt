@@ -40,3 +40,6 @@ urlpatterns = [
         name='blog-about'
     ),
 ]
+
+
+

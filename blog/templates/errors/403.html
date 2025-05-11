@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="text-center content-section">
+    <h2 class="display-4">403 - Forbidden</h2>
+    <p class="lead">You don’t have permission to access this page.</p>
+    <a class="btn btn-outline-info" href="{% url 'blog-home' %}">Return to Home</a>
+</div>
+{% endblock %}

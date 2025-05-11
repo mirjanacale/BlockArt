@@ -1,4 +1,6 @@
 from django.contrib import admin
+from blog import views as blog_views
+
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf import settings
@@ -48,6 +50,7 @@ urlpatterns = [
        name='password_reset_complete'
     ),
     path('', include('blog.urls')),
+
 ]
 
 # If the DEBUG mode is enabled.
@@ -55,3 +58,5 @@ urlpatterns = [
 handler404 = 'blog.views.custom_404'
 handler500 = 'blog.views.custom_500'
 handler403 = 'blog.views.custom_403'
+
+
