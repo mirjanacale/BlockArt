@@ -62,6 +62,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(self.request, "Your post has been updated.")
         return super().form_valid(form)
       
     def form_invalid(self, form):
@@ -78,10 +79,15 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'blog/post_confirm_delete.html'
     success_url = '/'
+   
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, "Your post was deleted.")
+        return super().delete(request, *args, **kwargs)
 
     def test_func(self):
         return self.request.user == self.get_object().author
 
+   
 # About Page
 
 
