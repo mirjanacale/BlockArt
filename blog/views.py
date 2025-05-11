@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from .forms import PostForm
 from django.contrib import messages
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, \
@@ -40,9 +41,11 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
+    success_url = reverse_lazy('blog-home') 
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(self.request, "Your post has been created successfully!")
         return super().form_valid(form)
     
     def form_invalid(self, form):
