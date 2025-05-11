@@ -51,3 +51,7 @@ urlpatterns = [
 ]
 
 # If the DEBUG mode is enabled.
+
+handler404 = 'blog.views.custom_404'
+handler500 = 'blog.views.custom_500'
+handler403 = 'blog.views.custom_403'
