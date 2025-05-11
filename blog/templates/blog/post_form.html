@@ -2,25 +2,33 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="content-section">
-    <form method="POST" enctype="multipart/form-data">
+<section class="content-section" role="form" aria-label="Create New Blog Post">
+    <h2 class="mb-4">New Blog Post</h2>
+
+    <form method="POST" enctype="multipart/form-data" novalidate>
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Blog Post</legend>
+            <legend class="border-bottom mb-4">Post Details</legend>
 
             {% if form.errors %}
-                <div class="alert alert-danger">
-                    <strong>Oops! Please fix the errors below:</strong>
-                    {{ form.errors }}
+                <div class="alert alert-danger" role="alert">
+                    <strong>There were errors in your submission:</strong>
+                    <ul class="mb-0">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
             {% endif %}
 
             {{ form|crispy }}
-
         </fieldset>
+
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Post</button>
         </div>
     </form>
-</div>
+</section>
 {% endblock content %}
