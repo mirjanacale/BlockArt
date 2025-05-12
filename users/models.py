@@ -10,10 +10,11 @@ from PIL import Image
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = cloudinary.models.CloudinaryField('image', default='default_piatzt')
+    image = cloudinary.models.CloudinaryField("image", default="default_piatzt")
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f"{self.user.username} Profile"
+
 
 # Automatically create a profile when a user is created
 
@@ -27,5 +28,6 @@ def create_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
+
 
 # Create your models here.

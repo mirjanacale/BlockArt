@@ -7,13 +7,13 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_remove_post_date_posted_post_created_on'),
+        ("blog", "0002_remove_post_date_posted_post_created_on"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='post',
-            name='created_on',
+            model_name="post",
+            name="created_on",
             field=models.DateTimeField(default=django.utils.timezone.now),
         ),
     ]
