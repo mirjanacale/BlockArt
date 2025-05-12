@@ -89,7 +89,8 @@ body {
   background-color: #fffbe9;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   padding: 10px;
-  max-width: 700px;
+  max-width: 600px;
+  width: 100%;
   margin: 20px auto;
   border-radius: 6px;
   transition: transform 0.3s ease;
@@ -100,7 +101,73 @@ body {
 }
 
 .art-frame img {
+  max-width: 100%;
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  display: block;
+  object-fit: contain;
+  aspect-ratio: 4/3; 
+}
+/* Global button styles for consistency */
+
+.btn {
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 6px 14px;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+  
+
+.btn-outline-info {
+  color: #103d33 !important;
+  border-color: #103d33 !important;
+  background-color: transparent ;
+}
+
+
+.btn-outline-info:hover,
+.btn-outline-info:focus {
+  background-color: #103d33 !important;
+  color: #fff !important;
+  border-color: #103d33!important;
+}
+
+.btn-info {
+  background-color: #103d33 !important;
+  border-color: #103d33 !important;
+  color: #fff !important;
+}
+
+/* Delete/Unlink actions */
+.btn-danger {
+  background-color: #b0302d;
+  border-color: #b0302d;
+}
+
+.btn-danger:hover {
+  background-color: #8a2524;
+  border-color: #8a2524;
+}
+
+/* Submit buttons (e.g., Post, Update) */
+.btn-primary {
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
+}
+
+.btn-primary:hover {
+  background-color: #22543d;
+  border-color: #22543d;
+}
+
+/* Secondary buttons (e.g., Update Post) */
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
 }

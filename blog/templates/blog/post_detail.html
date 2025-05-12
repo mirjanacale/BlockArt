@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
-
 {% block content %}
+
 <h1 class="mb-4">Post Details</h1>
 
 <article class="media content-section">
@@ -25,12 +25,14 @@
 
         <!-- Framed Painting with Caption -->
         {% if object.featured_image %}
-        <figure class="art-frame text-center my-4">
-            <img src="{{ object.featured_image.url }}" class="img-fluid" alt="{{ object.title }}">
-            <figcaption class="text-muted mt-2">
-                "{{ object.title }}" by {{ object.author }}
-            </figcaption>
-        </figure>
+        <div class="container">
+            <figure class="art-frame text-center my-4">
+                <img src="{{ object.featured_image.url }}" class="img-fluid" alt="{{ object.title }}">
+                <figcaption class="text-muted mt-2">
+                    "{{ object.title }}" by {{ object.author }}
+                </figcaption>
+            </figure>
+        </div>
         {% endif %}
 
         <!-- Post Content -->
@@ -50,4 +52,5 @@
         </div>
     </div>
 </article>
+
 {% endblock content %}

@@ -1,4 +1,4 @@
-# ArtBlog
+# BlockArt
 
 ![ArtBlog Logo](https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/favicon-32x32_zx3pmg.png)
 
@@ -6,7 +6,7 @@
 
 <img src='https://res.cloudinary.com/dyemjyefz/image/upload/v1741535124/Screenshot_2025-03-09_154028_tstkg9.png'></h2>
 
-# 🎨 BlockArt – A Community Blog for Artists
+#  BlockArt – A Community Blog for Artists
 
 BlockArt is a full-stack blog application built with Django, where visual artists can post, share, and interact with creative content. It’s designed to help users overcome creative blocks by browsing others’ posts, receiving feedback, and maintaining their own digital gallery.
 
@@ -18,23 +18,23 @@ The platform features:
 - Image hosting via Cloudinary
 
 
-## 🌟 Why Use ArtBlock?  
+##  Why Use BlockArt?  
 
-✅ **Inspiration at Your Fingertips** – Browse unique artwork to spark new ideas.  
-✅ **Showcase Your Art** – Upload your own paintings and share your creativity.  
-✅ **Engaging Community** – Connect with fellow artists and receive valuable feedback.  
-✅ **Easy & Accessible** – Works on all devices, so you can explore anytime, anywhere.  
-✅ **Seamless Image Hosting** – Powered by **Cloudinary**, ensuring high-quality image storage.  
+ **Inspiration at Your Fingertips** – Browse unique artwork to spark new ideas.  
+ **Showcase Your Art** – Upload your own paintings and share your creativity.  
+ **Engaging Community** – Connect with fellow artists and receive valuable feedback.  
+ **Easy & Accessible** – Works on all devices, so you can explore anytime, anywhere.  
+ **Seamless Image Hosting** – Powered by **Cloudinary**, ensuring high-quality image storage.  
 
 ---
 
- **Join ArtBlock today and let your creativity flow!**  
+ **Join BlockArt today and let your creativity flow!**  
 
 ## User Experience (UX)
 <hr>
 
 ### First-Time Visitors
-- Understand the purpose of ArtBlock at a glance
+- Understand the purpose of BlockArt at a glance
 - View public art posts without needing to log in
 - Register for an account to join the community
 
@@ -82,7 +82,7 @@ The following user stories were planned and tracked using GitHub Projects during
 | **Text** | `#2D2D2D` | Deep Charcoal (Headings, Body Text) |
 | **Secondary** | `#B0302D` | Rich Red (Icons, Hover Effects) |
 
-This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, vintage, and artistic** look! ✨
+This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, vintage, and artistic** look! 
 
 
 - Images  what are used are from mayself and my dother.
@@ -362,6 +362,27 @@ Lighthouse testing was carried out using the [Chrome DevTools](https://developer
 
 
 <hr>  
+
+### Manual Testing
+
+| Feature               | Test Steps                                              | Expected Result                                         | Actual Result | Pass/Fail | Bug/Notes |
+|-----------------------|---------------------------------------------------------|----------------------------------------------------------|---------------|-----------|-----------|
+| Register New Account  | Go to /register/, fill in form and submit               | Redirect to login, success message displayed             |               |       pass    |           |
+| Login                 | Go to /login/, enter correct credentials                | Redirect to homepage, welcome message shown              |               |    pass       |           |
+| Logout                | Click Logout button from navbar                         | Redirect to homepage, user logged out                    |               |   pass        |           |
+| View Homepage         | Visit / and check if posts are displayed                | Homepage shows list of posts                             |               |    pass       |           |
+| View Single Post      | Click a post title from homepage                        | Post detail view shows title, image, content             |               |   pass        |           |
+| Create Blog Post      | Click 'New Post', submit a new post form                | New post appears on homepage                             |               |    pass       |           |
+| Edit Blog Post        | Click 'Update' on a post and submit changes             | Post updates and shows changed content                   |               |    pass       |           |
+| Delete Blog Post      | Click 'Delete' on a post and confirm                    | Post no longer appears                                   |               |    pass       |           |
+| Like/Unlike Post      | Click 'Like' or 'Unlike' button under a post            | Like count increases/decreases                           |               |     pass      |           |
+| View Profile          | Click 'Profile' in navbar                               | Profile info shown, including image and email            |               |    pass       |           |
+| Update Profile Info   | Update username or profile image and submit             | Profile changes are saved and shown                      |               |    pass       |           |
+| Password Reset        | Request password reset and follow email link           | Password reset email sent and flow works                 |               |   pass        |           |
+| Error 404 Page        | Visit a non-existent URL like /doesnotexist/           | 404 page is displayed                                    |               |  pass         |           |
+| Error 403 Page        | Try restricted page without permissions                | 403 page is displayed                                    |               |   pass        |           |
+| Error 500 Page        | Simulate server error (e.g., raise error in view)       | 500 error page shown with custom template                |               |   pass        |           |
+
 
   
    

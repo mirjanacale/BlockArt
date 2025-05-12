@@ -18,17 +18,19 @@
             </div>
         </div>
 
-        <!-- Featured Painting with Frame -->
-        <figure class="art-frame text-center my-3">
-            {% if post.featured_image %}
-                <img src="{{ post.featured_image.url }}" class="img-fluid" alt="{{ post.title }}">
-            {% else %}
-                <img src="{% static 'images/default.jpg' %}" class="img-fluid" alt="Default artwork">
-            {% endif %}
-            <figcaption class="text-muted mt-2">
-                "{{ post.title }}" by {{ post.author }}
-            </figcaption>
-        </figure>
+        <!-- Framed Image with Caption -->
+        <div class="container">
+            <figure class="art-frame text-center my-3">
+                {% if post.featured_image %}
+                    <img src="{{ post.featured_image.url }}" class="img-fluid" alt="{{ post.title }}">
+                {% else %}
+                    <img src="{% static 'images/default.jpg' %}" class="img-fluid" alt="Default artwork">
+                {% endif %}
+                <figcaption class="text-muted mt-2">
+                    "{{ post.title }}" by {{ post.author }}
+                </figcaption>
+            </figure>
+        </div>
 
         <!-- Title and Snippet -->
         <h2>
