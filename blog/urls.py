@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import UserPostListView
 from .views import (
     PostListView,
     PostDetailView,
@@ -38,6 +39,11 @@ urlpatterns = [
         'about/',
         views.about,
         name='blog-about'
+    ),
+    path(
+        'user/<str:username>/',
+        UserPostListView.as_view(),
+        name='user-posts'
     ),
 ]
 

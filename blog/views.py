@@ -1,25 +1,17 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post
-from .forms import PostForm
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import ListView, DetailView, CreateView, \
-    UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.core.exceptions import PermissionDenied
+from django.contrib.auth.models import User
 
-# Home View - Shows only published posts
-
-
-def home(request):
-    return render(request, 'blog/home.html',
-                  {'posts': Post.objects.filter(
-                      status='published').order_by('-created_on')})
-
-# Post List View
+from .models import Post
+from .forms import PostForm
 
 
+# --- Homepage View ---
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'
@@ -30,33 +22,41 @@ class PostListView(ListView):
     def get_queryset(self):
         return Post.objects.filter(status='published').order_by('-created_on')
 
-# Post Detail View
+
+# --- Posts by a Specific User ---
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'blog/user_posts.html'
+    context_object_name = 'posts'
+    paginate_by = 9
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user, status='published').order_by('-created_on')
 
 
+# --- Post Detail ---
 class PostDetailView(DetailView):
     model = Post
 
-# Create Post View
 
-
+# --- Create a New Post ---
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
-    success_url = reverse_lazy('blog-home') 
+    success_url = reverse_lazy('blog-home')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         messages.success(self.request, "Your post has been created successfully!")
         return super().form_valid(form)
-    
+
     def form_invalid(self, form):
         print("Form validation failed:", form.errors)
         return super().form_invalid(form)
-    
-
-# Update Post View
 
 
+# --- Update a Post ---
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     form_class = PostForm
@@ -65,7 +65,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         form.instance.author = self.request.user
         messages.success(self.request, "Your post has been updated.")
         return super().form_valid(form)
-      
+
     def form_invalid(self, form):
         print("Form validation failed:", form.errors)
         return super().form_invalid(form)
@@ -73,14 +73,13 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user == self.get_object().author
 
-# Delete Post View
 
-
+# --- Delete a Post ---
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'blog/post_confirm_delete.html'
-    success_url = '/'
-   
+    success_url = reverse_lazy('blog-home')
+
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, "Your post was deleted.")
         return super().delete(request, *args, **kwargs)
@@ -88,16 +87,12 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         return self.request.user == self.get_object().author
 
-   
-# About Page
 
-
+# --- About Page ---
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
-# Like Post View
-
-
+# --- Like/Unlike a Post ---
 @login_required
 def like_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -109,16 +104,8 @@ def like_post(request, pk):
         messages.success(request, 'You liked this post!')
     return redirect('post-detail', pk=pk)
 
-# Search View
 
-
-def test_func(self):
-    obj = self.get_object()
-    if self.request.user != obj.author:
-        print(f"[SECURITY] User {self.request.user} tried to delete post {obj.id} by {obj.author}")
-    return self.request.user == obj.author
-
-
+# --- Custom Error Views ---
 def custom_404(request, exception):
     return render(request, 'errors/404.html', status=404)
 
@@ -129,5 +116,3 @@ def custom_500(request):
 
 def custom_403(request, exception):
     return render(request, 'errors/403.html', status=403)
-
-
