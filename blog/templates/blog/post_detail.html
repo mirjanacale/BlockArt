@@ -24,16 +24,19 @@
         </div>
 
         <!-- Framed Painting with Caption -->
+      <div class="container">
+    <figure class="art-frame text-center my-4">
         {% if object.featured_image %}
-        <div class="container">
-            <figure class="art-frame text-center my-4">
-                <img src="{{ object.featured_image.url }}" class="img-fluid" alt="{{ object.title }}">
-                <figcaption class="text-muted mt-2">
-                    "{{ object.title }}" by {{ object.author }}
-                </figcaption>
-            </figure>
-        </div>
+            <img src="{{ object.featured_image.url }}" class="img-fluid" alt="{{ object.title }}">
+        {% else %}
+            <img src="https://res.cloudinary.com/dyemjyefz/image/upload/v1746738213/me3fmm8fozl2y69fd4xd.jpg" class="img-fluid" alt="Default image for {{ object.title }}">
         {% endif %}
+        <figcaption class="text-muted mt-2">
+            "{{ object.title }}" by {{ object.author }}
+        </figcaption>
+    </figure>
+</div>
+
 
         <!-- Post Content -->
         <p class="article-content">{{ object.content }}</p>

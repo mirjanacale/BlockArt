@@ -12,7 +12,7 @@ class Post(models.Model):
     ]
     title = models.CharField(max_length=200)
     content = models.TextField()
-    featured_image = CloudinaryField("image", blank=True, null=True)
+    featured_image = CloudinaryField("image", default="https://res.cloudinary.com/dyemjyefz/image/upload/v1746738213/me3fmm8fozl2y69fd4xd.jpg", blank=True, null=True)
     # Uses Cloudinary for storage
     created_on = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
