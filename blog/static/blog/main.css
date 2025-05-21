@@ -2,7 +2,11 @@ body {
   background: url('https://res.cloudinary.com/dyemjyefz/image/upload/v1741279258/peakpx_6_g8veul.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #333333;
-  margin-top: 5rem;     
+  margin-top: 5rem; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+
 }
   
   h1, h2, h3, h4, h5, h6 {
