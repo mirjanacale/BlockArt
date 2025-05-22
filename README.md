@@ -249,14 +249,14 @@ This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, 
 
 | File         | Preview |
 |-------------|---------|
-| `base.html`  | ![base.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599020/base.html_wug6vn.png) |
-| `about.html`   | ![about.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599016/about.html_jpz6b9.png) |
-| `post confirm delete.html`   | ![post_confirm_delete.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599034/p_c_delete.html_rfk5mt.png) |
-| `post detail.html`  | ![post_detail.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599039/post_dital.html_ibqpmy.png) |
-| `post form.html` | ![post_form.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599044/post_form.html_fcg0th.png) |
-| `password_reset_complete.html`  | ![password_reset_complete.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599044/post_form.html_fcg0th.png) |
-
-
+| `base.html`  | ![base.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918081/base.htmlval_m8grrz.png) |
+| `about.html`   | ![about.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918044/about.htmlval_jqz3oq.png) |
+| `edit_profile.html`   | ![edit_profile.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918066/editprofileval_kp2qvl.png) |
+| `signup.html`  | ![signup.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918071/signup.html_nmohsf.png) |
+| `index.html` | ![index.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918052/index.htmlval_fgkwsq.png) |
+| `login.html`  | ![login.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918091/login.html_val_euy3fk.png) |
+| `logout.html`  | ![logout.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918748/logout.htmlval_vlrqpx.png) |
+| `post_detail.html`  | ![post_detail.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747921382/post_detailval_c8kjk4.png)
 ##  HTML Validation
 
 All HTML files were tested using the [W3C Markup Validation Service](https://validator.w3.org/). The results are as follows:
