@@ -109,10 +109,10 @@ DATABASES = {
  }
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
+   'default': dj_database_url.config(
+        default='postgres://localhost',  # fallback for local dev
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=False  # chan
     )
 }
 
