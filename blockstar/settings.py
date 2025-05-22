@@ -110,11 +110,12 @@ MIME_TYPES = {
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://localhost',  # fallback for local dev
+        default=os.environ.get("DATABASE_URL"),
         conn_max_age=600,
-        ssl_require=True # change to True for production
+        ssl_require=True
     )
 }
+
 
 CSRF_TRUSTED_ORIGINS = ["https://*.codeinstitute-ide.net/", "https://*.herokuapp.com"]
 
