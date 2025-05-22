@@ -112,7 +112,7 @@ DATABASES = {
     'default': dj_database_url.config(
         default='postgres://localhost',  # fallback for local dev
         conn_max_age=600,
-        ssl_require=False  # change to True for production
+        ssl_require=True # change to True for production
     )
 }
 
