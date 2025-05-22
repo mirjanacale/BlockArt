@@ -8,20 +8,24 @@
     <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}" alt="{{ object.author }}'s profile picture">
 
     <div class="media-body">
-        <!-- Author and Timestamp -->
-        <div class="article-metadata d-flex justify-content-between align-items-center">
-            <div>
-                <a class="mr-2 font-weight-bold" href="#">{{ object.author }}</a>
-                <small class="text-muted">{{ object.created_on|date:"F d, Y" }}</small>
-            </div>
+        
+    <!-- Author and Timestamp -->
+<div class="article-metadata d-flex justify-content-between align-items-center">
+    <div>
+        <a class="mr-2 font-weight-bold" href="#">{{ object.author }}</a>
+        <time class="text-muted small" datetime="{{ object.created_on|date:'Y-m-d' }}">
+            {{ object.created_on|date:"F d, Y" }}
+        </time>
+    </div>
 
-            {% if object.author == user %}
-            <div>
-                <a class="btn btn-secondary btn-sm" href="{% url 'post-update' object.id %}">Update</a>
-                <a class="btn btn-danger btn-sm" href="{% url 'post-delete' object.id %}">Delete</a>
-            </div>
-            {% endif %}
-        </div>
+    {% if object.author == user %}
+    <div>
+        <a class="btn btn-secondary btn-sm" href="{% url 'post-update' object.id %}">Update</a>
+        <a class="btn btn-danger btn-sm" href="{% url 'post-delete' object.id %}">Delete</a>
+    </div>
+    {% endif %}
+</div>
+    
 
         <!-- Framed Painting with Caption -->
       <div class="container">
