@@ -25,7 +25,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
+
+<!-- Header -->
 <header class="site-header">
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
@@ -56,14 +58,13 @@
     </nav>
 </header>
 
-
+<!-- Main Content -->
+<main class="flex-fill container my-4">
     <div class="row">
         <div class="col-md-8">
             {% if messages %}
                 {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">
-                        {{ message }}
-                    </div>
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
                 {% endfor %}
             {% endif %}
             {% block content %}{% endblock %}
@@ -82,9 +83,10 @@
             </div>
         </aside>
     </div>
+</main>
 
-
-<footer class="bg-dark text-light py-3 mt-5">
+<!-- Footer -->
+<footer class="bg-dark text-light py-3 mt-auto">
     <div class="container text-center">
         <p class="mb-0">© 2025 ArtBlog. Built with Django + by Mirjana.</p>
     </div>
@@ -94,5 +96,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

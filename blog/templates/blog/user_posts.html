@@ -6,7 +6,9 @@
 
 {% for post in posts %}
 <article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" alt="{{ post.author }}'s profile picture">
+    <img class="rounded-circle article-img"
+     src="{{ post.author.profile.image.url|default:'https://res.cloudinary.com/dyemjyefz/image/upload/v1746832945/default_piatzt.jpg' }}"
+     alt="{{ post.author|escape }}&#39;s profile picture">
 
     <div class="media-body">
         <div class="article-metadata d-flex justify-content-between align-items-center">
