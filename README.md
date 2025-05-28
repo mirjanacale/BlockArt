@@ -65,12 +65,26 @@ The following user stories were planned and tracked using GitHub Projects during
 | US9 | As a user, I want to receive feedback on my work.                                     |  Planned   |
 | US10| As a user, I want to bookmark posts to view them later.                               |  Planned   |
 
- 
+ ### Facebook Page Mockup
+
+To support the marketing aspect of BlockArt, a mock Facebook Business Page has been included.  
+While originally designed for my Mollavie e-commerce art store, the branding, artwork, and messaging are consistent with BlockArt, as both platforms represent my personal creative work and visual identity.
+
+This mockup simulates how BlockArt could be promoted through social media to attract a wider artistic audience, share updates, and foster community engagement.
+
+
+
+<details>
+<summary>Facebook Page Mockup</summary>  
+
+![Facebook Page Mockup](https://res.cloudinary.com/dyemjyefz/image/upload/v1748442920/mockuper_zkfnns.png)
+</details>    
+
 - ### Database planning 
 <hr>  
   Database Structure     
      
-![admin page](https://res.cloudinary.com/dyemjyefz/image/upload/v1746831200/chart_tgvyw5.png)  
+![admin page](https://res.cloudinary.com/dyemjyefz/image/upload/v1748464678/database_ic60sj.png)  
 -   ### Design
     -  ##  BlockArt Color Scheme
 
