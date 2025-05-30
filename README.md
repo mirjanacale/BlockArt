@@ -52,6 +52,10 @@ The platform features:
 
 The following user stories were planned and tracked using GitHub Projects during development:
 
+ A full list of issues and progress can be viewed on the [GitHub Project Board](https://github.com/users/mirjanacale/projects/9).
+
+
+### User Stories Table
 | ID  | User Story                                                                            | Status      |
 |-----|----------------------------------------------------------------------------------------|-------------|
 | US1 | As a new visitor, I want to register so that I can start posting and liking content.  |  Completed |
@@ -199,6 +203,8 @@ This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, 
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://www.python.org/)
+- [Django](https://www.djangoproject.com/)
+- [SQL](https://en.wikipedia.org/wiki/SQL)
 
 
 
@@ -339,7 +345,7 @@ All error templates are stored in:
 - JavaScript
     - errors were found when passing through the   [Jshint](https://jshint.com/) validator.
 
-    ![js](https://res.cloudinary.com/dyemjyefz/image/upload/v1741566255/js_g7u24v.png)
+    ![js]()
 
 - Python
     - No errors were found when passing through [CI Python Linter](https://pep8ci.herokuapp.com/#)validator.
@@ -491,6 +497,29 @@ The following features are not part of the current MVP but are planned for futur
 - **Tags and filters**  
   Posts can be organized by tags or categories for easier discovery.
 
+## Manual Testing Summary
+
+All forms and CRUD features were manually tested on the live site using both valid and invalid data. Scenarios included registering with existing usernames, invalid emails, weak or mismatched passwords, logging in with incorrect credentials, creating, editing, and deleting posts with missing fields, and ensuring users cannot delete posts they do not own. In all cases, the site displayed proper validation messages and handled errors gracefully, with no unexpected server errors or 500 responses.
+
+## Test Cases
+The following test cases were executed to ensure the functionality of the BlockArt blog application. Each test case includes the feature being tested, the specific test case, the expected result, the actual result, and whether it passed or failed.
+
+| Feature        | Test Case                          | Expected Result                | Actual Result    | Pass/Fail |
+| -------------- | ---------------------------------- | ------------------------------ | --------------- | --------- |
+| Registration   | Valid data                         | User registered, redirect      | As expected     | Pass      |
+| Registration   | Existing username                  | Error message shown            | As expected     | Pass      |
+| Registration   | Invalid email                      | Error message shown            | As expected     | Pass      |
+| Registration   | Weak/mismatched passwords          | Error message shown            | As expected     | Pass      |
+| Login          | Valid credentials                  | User logged in, redirect       | As expected     | Pass      |
+| Login          | Wrong credentials                  | Error message shown            | As expected     | Pass      |
+| Create Post    | Valid data                         | Post appears on homepage       | As expected     | Pass      |
+| Create Post    | Missing fields                     | Form error message             | As expected     | Pass      |
+| Edit Post      | Update post data                   | Changes saved and displayed    | As expected     | Pass      |
+| Delete Post    | Delete own post                    | Post removed                   | As expected     | Pass      |
+| Delete Post    | Try to delete another user’s post  | 403 Forbidden or not allowed   | As expected     | Pass      |
+
+
+
 
 ## Deployment
 This project utilizes [Heroku](http://heroku.com) , for deployment, allowing developers to build, run, and manage applications in the cloud.
@@ -574,4 +603,4 @@ You can fork this repository by using the following steps:
 There are no major differences between the local (Gitpod) version and the deployed (GitHub Pages) version that I'm aware of.
 
 ## Contributing
-Contributions are welcome! If you have suggestions for new questions or improvements to the game, please feel free to open an issue .
+Contributions are welcome! If you have suggestions for new questions or improvements to the blog, please feel free to open an issue .

@@ -59,5 +59,32 @@
         </div>
     </div>
 </article>
+<hr>
+<h3>Comments</h3>
+<div class="mb-4">
+    {% for comment in comments %}
+        <div class="border rounded p-2 mb-2 bg-light">
+            <strong>{{ comment.user.username }}</strong>
+            <span class="text-muted small">{{ comment.created_on|date:"F d, Y H:i" }}</span>
+            <p class="mb-1">{{ comment.body|linebreaks }}</p>
+        </div>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+</div>
+
+{% if user.is_authenticated %}
+    <form method="post" class="mb-4">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ comment_form.body }}
+        </div>
+        <button type="submit" class="btn btn-navbar-green">Add Comment</button>
+    </form>
+{% else %}
+    <p>
+        <a href="{% url 'login' %}?next={{ request.path }}">Log in to comment</a>
+    </p>
+{% endif %}
 
 {% endblock content %}
