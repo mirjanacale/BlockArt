@@ -66,10 +66,12 @@ The following user stories were planned and tracked using GitHub Projects during
 | US6 | As a user, I want to upload a profile picture.                                        |  Completed |
 | US7 | As a user, I want to reset my password securely.                                      |  Completed |
 | US8 | As a user, I want to view other artists’ posts without logging in.                    |  Completed |
-| US9 | As a user, I want to receive feedback on my work.                                     |  Planned   |
-| US10| As a user, I want to bookmark posts to view them later.                               |  Planned   |
+| US9 | As a user, I want to receive feedback on my work.                                     |  Completed |
+| US13| As a user, I want to comment on other artists’ posts.                                 |  Completed |
+| US14| As a user, I want to edit or delete my comments.                                      |  Completed |
 
- ### Facebook Page Mockup
+
+### Facebook Page Mockup
 
 To support the marketing aspect of BlockArt, a mock Facebook Business Page has been included.  
 While originally designed for my Mollavie e-commerce art store, the branding, artwork, and messaging are consistent with BlockArt, as both platforms represent my personal creative work and visual identity.
@@ -176,6 +178,19 @@ This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, 
     -   Registered users can delete their blog posts.
 - ![register.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564757/Screenshot_2025-03-07_210019_p7kqzq.png)
 
+
+- ###  Comments Feature
+    - egistered users can now leave comments on any post to encourage discussion and community feedback.  
+     - Comments display the username, date, and message.
+    - Only logged-in users can add comments.
+    - The "Add Comment" button matches the site's primary green color for consistent branding.  
+     
+  
+![comments](https://res.cloudinary.com/dyemjyefz/image/upload/v1748626355/coment_bdzqja.png)
+
+
+
+
 - ## Admin Page
     -   Admin users can view all user profiles.
     -   Admin users can view all blog posts.
@@ -183,6 +198,8 @@ This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, 
     -   Admin users can edit blog posts.
     -   Admin users can delete blog posts.
 ![admin page](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563344/Screenshot_2025-03-07_210202_dicsl6.png)
+
+
 
 - **Interactive Elements**:
 
@@ -336,17 +353,24 @@ Error templates were tested locally using debug routes and `DEBUG = False`. Afte
 
 All error templates are stored in:
  
-
+---
 - CSS 
      - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) validator.
 
     ![CSS Validator ](https://res.cloudinary.com/dyemjyefz/image/upload/v1741565382/css_o3tf14.png)
 
+
+---
+
+
 - JavaScript
-    - errors were found when passing through the   [Jshint](https://jshint.com/) validator.
+  
+This project does not include any custom JavaScript code.
+All dynamic or interactive functionality is handled by external libraries (such as Bootstrap) via CDN links in the template files.
 
-    ![js]()
+As a result, no custom JavaScript files needed to be validated with JSHint.
 
+---
 - Python
     - No errors were found when passing through [CI Python Linter](https://pep8ci.herokuapp.com/#)validator.
 
@@ -354,8 +378,8 @@ All error templates are stored in:
  was used to validate the Python files . No issues presented and line length was kept under 80 characters.
 
 
-|
-<hr>
+
+---
 
 | File         | Preview |
 |-------------|---------|
@@ -367,10 +391,14 @@ All error templates are stored in:
 | `forms.py`  | ![FORMS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741566807/users_forms.py_ljefcv.png) |
 | `manage.py` | ![MANAGE.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741566802/user.manage.py_ovewls.png) |
 
+
+---
+
 ### Lighthouse Scores
 
 Lighthouse testing was carried out using the [Chrome DevTools](https://developers.google.com/web/tools/lighthouse/).
 
+--- 
 
 | File         | Preview |
 |-------------|---------|
@@ -405,7 +433,7 @@ Lighthouse testing was carried out using the [Chrome DevTools](https://developer
 
 
   
-   
+ ---  
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -462,15 +490,21 @@ The following user goals were identified and tested to ensure a smooth experienc
 
 ## Bugs fixed
 
-| BUGS FIXED | PREVIEW |
+---
+
 
  - fix: disable SMTP and enforce console email backend to prevent connection errors
  - fix: Removed SMTP settings to avoid WinError 10061 and ensured console email backend is used for password reset in local testing.
 
-| PASSWORD RESET | ![APPS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570443/Screenshot_2025-03-07_210331_zuzeq2.png) 
-|  PASSWORD  RESET | ![VIEWS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1746829065/Screenshot_2025-05-09_225405_ppff57.png) 
+ PASSWORD RESET   
+     ![APPS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570443/Screenshot_2025-03-07_210331_zuzeq2.png) 
 
-<hr>
+
+ PASSWORD RESET     
+   ![VIEWS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1746829065/Screenshot_2025-05-09_225405_ppff57.png) h
+
+
+---
 
 ##  Future Features
 
