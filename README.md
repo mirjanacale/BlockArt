@@ -529,8 +529,6 @@ The following user goals were identified and tested to ensure a smooth experienc
 
 The following features are not part of the current MVP but are planned for future development:
 
-- **Comments on posts**  
-  Users will be able to leave comments under each post to offer feedback or discuss artwork.
 
 - **User following**  
   Users will be able to follow their favorite artists and see their latest posts in a dedicated feed.
