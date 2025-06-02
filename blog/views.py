@@ -21,8 +21,6 @@ from .models import Post
 from .forms import PostForm
 
 
-
-
 # --- Homepage View ---
 class PostListView(ListView):
     model = Post
@@ -48,11 +46,12 @@ class UserPostListView(ListView):
             "-created_on"
         )
 
-
 # --- Post Detail ---
+
 
 class PostDetailView(DetailView):
     model = Post
+
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         if request.user.is_authenticated:
@@ -67,8 +66,6 @@ class PostDetailView(DetailView):
             else:
                 messages.error(request, "There was a problem with your comment.")
         return self.get(request, *args, **kwargs)
-
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -160,8 +157,7 @@ def custom_403(request, exception):
 
 def subscribe_newsletter(request):
     if request.method == "POST":
-        email = request.POST.get('email')
-        # Save the email to your model or mailing list here
-        # You can add a success message or redirect as needed
-        return HttpResponseRedirect('/')  # or wherever you want
+        # (Optional: Save email or send confirmation)
+        return HttpResponseRedirect('/')  # Redirect to home after subscribing
     return HttpResponseRedirect('/')
+

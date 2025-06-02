@@ -322,9 +322,13 @@ All HTML files were tested using the [W3C Markup Validation Service](https://val
 | Password Reset         |    |   0    |    0     |
 | Login                  |    |   0    |    0     |
 | Logout                 |    |   0    |    0     |
+| Post Detail            |    |   0    |    0     |
+| New Post               |    |   0    |    0     |
+| Edit Profile           |    |   0    |    0     |
+| Comments               |    |   0    |    0     |
+| Newsletter Signup      |    |   0    |    0     |
 
-
-  <hr> 
+  <hr>
 
   ##  Custom Error Pages
 
@@ -444,10 +448,11 @@ Lighthouse testing was carried out using the [Chrome DevTools](https://developer
 | Error 404 Page        | Visit a non-existent URL like /doesnotexist/           | 404 page is displayed                                    |               |  pass         |           |
 | Error 403 Page        | Try restricted page without permissions                | 403 page is displayed                                    |               |   pass        |           |
 | Error 500 Page        | Simulate server error (e.g., raise error in view)       | 500 error page shown with custom template                |               |   pass        |           |
+| Newsletter Signup     | Fill newsletter form in footer and submit              | Redirect to homepage, success message shown               |               |   pass        |           |  
+| View Comments         | Click 'View Comments' on a post                        | Comments are displayed under the post                    |               |   pass        |           |
+| Add Comment           | Fill comment form and submit                           | Comment appears under the post                           |               |   pass        |           |
 
 
-  
- ---  
 
 ### Testing User Stories from User Experience (UX) Section
 
