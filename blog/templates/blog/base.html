@@ -92,7 +92,7 @@
 <section class="bg-light text-center py-4">
     <div class="container">
         <h5 class="mb-3">Stay inspired — Join my art updates</h5>
-        <form action="#" method="POST" class="form-inline justify-content-center">
+        <form action="{% url 'subscribe_newsletter' %}" method="POST" class="form-inline justify-content-center">
             {% csrf_token %}
             <div class="form-group mb-2 mr-2">
                 <label for="email" class="sr-only">Email</label>

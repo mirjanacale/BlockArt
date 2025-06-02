@@ -189,6 +189,20 @@ This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, 
 ![comments](https://res.cloudinary.com/dyemjyefz/image/upload/v1748626355/coment_bdzqja.png)
 
 
+## Newsletter Signup
+
+The BlockArt site features a newsletter signup form in the footer section, inviting visitors to subscribe for future updates.
+
+- The form is fully integrated with Django’s CSRF protection for security.
+- Users can enter their email address and submit the form.
+- At this stage, the form simply redirects users to the homepage after submission.
+- Email addresses are not stored or processed further, as this functionality is reserved for a future enhancement.
+
+> **Future Enhancement:**  
+> In the next development phase, submitted email addresses could be saved to the database and managed through the Django admin panel, or integrated with a third-party newsletter service.
+
+This implementation demonstrates understanding of Django’s form handling and CSRF security best practices.
+![newsletter signup](https://res.cloudinary.com/dyemjyefz/image/upload/v1748882890/Screenshot_2025-06-02_174646_j2oofw.png)
 
 
 - ## Admin Page
