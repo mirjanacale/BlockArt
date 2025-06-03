@@ -7,8 +7,16 @@ from django.dispatch import receiver
 
 
 class Comment(models.Model):
-    post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        'blog.Post',
+        on_delete=models.CASCADE,
+        related_name='user_comments'  # MUST BE unique compared to blogcomments or user_comments!
+    )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='profile_user_comments'  # Give this a unique related_name!
+    )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 

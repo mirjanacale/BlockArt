@@ -1,56 +1,89 @@
 {% extends 'blog/base.html' %}
-{% load crispy_forms_tags %}
-
 {% block content %}
-<section class="content-section" aria-label="Blog Post Details">
 
-    <!-- Post Title -->
-    <h2 class="mb-4">{{ object.title }}</h2>
+<h1 class="mb-4">Post Details</h1>
 
-    <!-- Post Content -->
-    <div class="mb-3">
-        <p>{{ object.content|linebreaks }}</p>
-        <small>By {{ object.author }} | {{ object.created_on }}</small>
-    </div>
+<article class="media content-section">
+    <!-- Author's Profile Image -->
+    <img class="rounded-circle article-img"
+         src="{% if object.author.profile.image %}{{ object.author.profile.image.url }}{% else %}https://res.cloudinary.com/dyemjyefz/image/upload/v1746738213/me3fmm8fozl2y69fd4xd.jpg{% endif %}"
+         alt="{{ object.author }}'s profile picture">
 
-    <!-- Existing Comments -->
-    <div class="mt-5">
-        <h4>Comments</h4>
-        {% if comments %}
-            <ul class="list-unstyled">
-                {% for comment in comments %}
-                    <li class="mb-3">
-                        <strong>{{ comment.user }}:</strong> {{ comment.body|linebreaks }}
-                        <br>
-                        <small>{{ comment.created_on|date:"M d, Y H:i" }}</small>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>No comments yet. Be the first to comment!</p>
-        {% endif %}
-    </div>
+    <div class="media-body">
+        <!-- Author and Timestamp -->
+        <div class="article-metadata d-flex justify-content-between align-items-center">
+            <div>
+                <a class="mr-2 font-weight-bold" href="#">
+                    {{ object.author.get_full_name|default:object.author.username }}
+                </a>
+                <time class="text-muted small" datetime="{{ object.created_on|date:'Y-m-d' }}">
+                    {{ object.created_on|date:"F d, Y" }}
+                </time>
+            </div>
+            {% if object.author == user %}
+            <div>
+                <a class="btn btn-secondary btn-sm" href="{% url 'post-update' object.id %}">Update</a>
+                <a class="btn btn-danger btn-sm" href="{% url 'post-delete' object.id %}">Delete</a>
+            </div>
+            {% endif %}
+        </div>
 
-    <!-- Comment Form -->
-    {% if user.is_authenticated %}
-        <div class="mt-4">
-            <h5>Leave a comment</h5>
-            <form method="post" novalidate>
-                {% csrf_token %}
-                {% if comment_form.errors %}
-                    <div class="alert alert-danger">
-                        Please correct the errors below.
-                        {{ comment_form.errors }}
-                    </div>
+        <!-- Framed Painting with Caption -->
+        <div class="container">
+            <figure class="art-frame text-center my-4">
+                {% if object.featured_image %}
+                    <img src="{{ object.featured_image.url }}" class="img-fluid" alt="{{ object.title }}">
+                {% else %}
+                    <img src="https://res.cloudinary.com/dyemjyefz/image/upload/v1746738213/me3fmm8fozl2y69fd4xd.jpg" class="img-fluid" alt="Default image for {{ object.title }}">
                 {% endif %}
-                {{ comment_form|crispy }}
-                <button type="submit" class="btn btn-success mt-2">Add Comment</button>
+                <figcaption class="text-muted mt-2">
+                    "{{ object.title }}" by {{ object.author.get_full_name|default:object.author.username }}
+                </figcaption>
+            </figure>
+        </div>
+
+        <!-- Post Content -->
+        <p class="article-content">{{ object.content }}</p>
+
+        <!-- Like Button -->
+        <div class="mt-4">
+            <form action="{% url 'like-post' object.id %}" method="POST">
+                {% csrf_token %}
+                  {{ form.as_p }}
+                {% if user in object.likes.all %}
+                    <button type="submit" class="btn btn-danger">Unlike</button>
+                {% else %}
+                    <button type="submit" class="btn btn-primary">Like</button>
+                {% endif %}
             </form>
+            <p class="mt-2">{{ object.total_likes }} like{{ object.total_likes|pluralize }}</p>
         </div>
-    {% else %}
-        <div class="alert alert-info mt-4">
-            <a href="{% url 'login' %}">Log in</a> to leave a comment.
+    </div>
+</article>
+<hr>
+<h3>Comments</h3>
+<div class="mb-4">
+    {% for comment in comments %}
+        <div class="border rounded p-2 mb-2 bg-light">
+            <strong>{{ comment.user.username }}</strong>
+            <span class="text-muted small">{{ comment.created_on|date:"F d, Y H:i" }}</span>
+            <p class="mb-1">{{ comment.body|linebreaks }}</p>
         </div>
-    {% endif %}
-</section>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+</div>
+
+{% if user.is_authenticated %}
+    <form method="post" class="mb-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-navbar-green">Create Post</button>
+    </form>
+{% else %}
+    <p>
+        <a href="{% url 'login' %}?next={{ request.path }}">Log in to comment</a>
+    </p>
+{% endif %}
+
 {% endblock content %}

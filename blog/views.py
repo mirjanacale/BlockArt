@@ -15,7 +15,9 @@ from django.views.generic import (
 
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponseRedirect
+from .forms import NewsletterSignupForm
+from django.shortcuts import render, redirect
+from .forms import CommentForm
 
 from .models import Post
 from .forms import PostForm
@@ -155,9 +157,46 @@ def custom_403(request, exception):
     return render(request, "errors/403.html", status=403)
 
 
-def subscribe_newsletter(request):
-    if request.method == "POST":
-        # (Optional: Save email or send confirmation)
-        return HttpResponseRedirect('/')  # Redirect to home after subscribing
-    return HttpResponseRedirect('/')
+def newsletter_signup(request):
+    if request.method == 'POST':
+        form = NewsletterSignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Or handle subscription logic
+            return redirect('blog-home')  # or some 'thank you' page
+    else:
+        form = NewsletterSignupForm()
+    return render(request, 'blog/newsletter.html', {'newsletter_form': form})
 
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    comments = post.comments.all()  # or your comment query
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.post = post
+            new_comment.user = request.user
+            new_comment.save()
+            return redirect('post-detail', pk=post.pk)
+    else:
+        comment_form = CommentForm()
+    return render(request, 'blog/post_detail.html', {
+        'object': post,
+        'comments': comments,
+        'comment_form': comment_form,
+    })
+
+
+def post_create(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('post-detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'blog/post_form.html', {'form': form})

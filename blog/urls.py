@@ -46,6 +46,6 @@ urlpatterns = [
         name='user-posts'
     ),
 
-    path('subscribe/', views.subscribe_newsletter, name='subscribe_newsletter')
+    path('subscribe/', views.newsletter_signup, name='subscribe_newsletter')
 
 ]
