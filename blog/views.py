@@ -72,7 +72,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post = self.get_object()
-        context['comments'] = post.comments.order_by('-created_on')
+        context['comments'] = post.blog_comments.order_by('-created_on')
         if self.request.user.is_authenticated:
             context['comment_form'] = CommentForm()
         return context
@@ -171,7 +171,7 @@ def newsletter_signup(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    comments = post.comments.all()  # or your comment query
+    comments = post.blog_comments.all()  # or your comment query
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():

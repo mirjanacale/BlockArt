@@ -190,3 +190,41 @@ body {
   background-color: #5a6268;
   border-color: #5a6268;
 }
+ 
+/* In static/blog/base.css */
+.comment-box {
+    border-radius: 10px;
+    padding: 10px;
+    background: #234206;
+    margin-bottom: 12px;
+}
+
+form.card {
+    background: rgba(255,255,255,0.95);
+    border: 2px solid #a19468;
+    margin-top: 2rem;
+}
+
+input, textarea, select {
+    border-radius: 10px;
+    border: 1.5px solid #6b705c;
+    padding: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.btn-navbar-green {
+    background-color: #275348;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+
+.btn-navbar-green:hover {
+    background-color: #163128;
+}

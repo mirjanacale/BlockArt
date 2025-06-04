@@ -14,7 +14,12 @@
         <div class="article-metadata d-flex justify-content-between align-items-center">
             <div>
                 <a class="mr-2 font-weight-bold" href="#">
-                    {{ object.author.get_full_name|default:object.author.username }}
+                    {% if object.author.get_full_name %}
+                {{ object.author.get_full_name }}
+                 {% else %}
+                 {{ object.author.username }}
+                  {% endif %}
+
                 </a>
                 <time class="text-muted small" datetime="{{ object.created_on|date:'Y-m-d' }}">
                     {{ object.created_on|date:"F d, Y" }}
@@ -37,7 +42,12 @@
                     <img src="https://res.cloudinary.com/dyemjyefz/image/upload/v1746738213/me3fmm8fozl2y69fd4xd.jpg" class="img-fluid" alt="Default image for {{ object.title }}">
                 {% endif %}
                 <figcaption class="text-muted mt-2">
-                    "{{ object.title }}" by {{ object.author.get_full_name|default:object.author.username }}
+                    {% if object.author.get_full_name %}
+                {{ object.author.get_full_name }}
+                  {% else %}
+                 {{ object.author.username }}
+                 {% endif %}
+
                 </figcaption>
             </figure>
         </div>
@@ -62,7 +72,7 @@
 <hr>
 <h3>Comments</h3>
 <div class="mb-4">
-    {% for comment in comments %}
+   {% for comment in object.blog_comments.all %}
         <div class="border rounded p-2 mb-2 bg-light">
             <strong>{{ comment.user.username }}</strong>
             <span class="text-muted small">{{ comment.created_on|date:"F d, Y H:i" }}</span>

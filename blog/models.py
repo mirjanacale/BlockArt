@@ -13,7 +13,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     featured_image = CloudinaryField(
-        "image", 
+        "image",
         default="https://res.cloudinary.com/dyemjyefz/image/upload/v1746738213/me3fmm8fozl2y69fd4xd.jpg",
         blank=True,
         null=True,
