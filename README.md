@@ -83,7 +83,7 @@ This mockup simulates how BlockArt could be promoted through social media to att
 <details>
 <summary>Facebook Page Mockup</summary>  
 
-![Facebook Page Mockup](https://res.cloudinary.com/dyemjyefz/image/upload/v1749408237/mockuper_koseed.png)
+![Facebook Page Mockup](https://res.cloudinary.com/dyemjyefz/image/upload/v1749409650/facebuk2_shro0j.png)
 </details>    
 
 - ### Database planning 
