@@ -162,8 +162,10 @@ def newsletter_signup(request):
         form = NewsletterSignupForm(request.POST)
         if form.is_valid():
             form.save()
-            # Or handle subscription logic
-            return redirect('blog-home')  # or some 'thank you' page
+            messages.success(request, "You've successfully subscribed to our newsletter!")
+            return redirect('blog-home')
+        else:
+            messages.error(request, "Please correct the errors below.")
     else:
         form = NewsletterSignupForm()
     return render(request, 'blog/newsletter.html', {'newsletter_form': form})
