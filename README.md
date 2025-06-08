@@ -536,7 +536,7 @@ While implementing the newsletter subscription feature, the following error occu
 
 ## Screenshot
 
-![Newsletter Bug Screenshot]()  
+![Newsletter Bug Screenshot](https://res.cloudinary.com/dyemjyefz/image/upload/v1749399818/Screenshot_2025-06-08_160852_bcq3ij.png)  
 
 ### Cause
 
