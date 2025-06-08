@@ -173,7 +173,7 @@ def newsletter_signup(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    comments = post.blog_comments.all()  # or your comment query
+    comments = post.blog_comments.all()  
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
@@ -181,7 +181,7 @@ def post_detail(request, pk):
             new_comment.post = post
             new_comment.user = request.user
             new_comment.save()
-            return redirect('post-detail', pk=post.pk)
+            return redirect('blog-home')
     else:
         comment_form = CommentForm()
     return render(request, 'blog/post_detail.html', {
