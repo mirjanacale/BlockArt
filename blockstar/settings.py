@@ -39,15 +39,13 @@ cloudinary.config(
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".herokuapp.com"]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://8000-mirjanacale-blockart-w0u1wrppahq.ws.codeinstitute-ide.net",
-]
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
+
 
 # Application definition
 
@@ -113,11 +111,7 @@ MIME_TYPES = {
  #}
 
 DATABASES = {
-   'default': dj_database_url.config(
-        default='postgres://localhost',  # fallback for local dev
-        conn_max_age=600,
-        ssl_require=False  # chan
-    )
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 

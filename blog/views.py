@@ -165,7 +165,7 @@ def newsletter_signup(request):
             email = form.cleaned_data['email']
             print(f"New subscriber: {email}")
             messages.success(request, "Thanks for subscribing!")
-            return redirect('home')
+            return redirect('blog-home')
     else:
         form = NewsletterSignupForm()
     return render(request, 'subscribe.html', {'form': form})

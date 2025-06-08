@@ -525,6 +525,31 @@ The following user goals were identified and tested to ensure a smooth experienc
 
 ---
 
+##  Bug Fixed: Newsletter Signup `NoReverseMatch` Error
+
+### Description
+
+While implementing the newsletter subscription feature, the following error occurred upon form submission:
+
+
+
+
+## Screenshot
+
+![Newsletter Bug Screenshot]()  
+
+### Cause
+
+The issue was due to a missing `name='blog_home'` in the home view URL pattern. The `newsletter_signup` view was trying to redirect to `'blog_home'`, but Django couldn't find a URL pattern with that name.
+
+### Solution
+
+Added the missing `name` attribute to the home URL path in `blog/urls.py`:
+
+```python
+path('', PostListView.as_view(), name='blog_home')
+```
+
 ##  Future Features
 
 The following features are not part of the current MVP but are planned for future development:
@@ -568,6 +593,12 @@ The following test cases were executed to ensure the functionality of the BlockA
 | Edit Post      | Update post data                   | Changes saved and displayed    | As expected     | Pass      |
 | Delete Post    | Delete own post                    | Post removed                   | As expected     | Pass      |
 | Delete Post    | Try to delete another user’s post  | 403 Forbidden or not allowed   | As expected     | Pass      |
+| Like Post      | Like a post                        | Like count increased           | As expected     | Pass      |
+| Unlike Post    | Unlike a post                      | Like count decreased           | As expected     | Pass      |
+| View Profile   | View own profile                   | Profile info displayed         | As expected     | Pass      |
+| Update Profile | Change profile image               | Image updated and displayed    | As expected     | Pass      |
+| submit Newsletter | Valid email                      | Redirect to homepage, success  | As expected     | Pass      |
+
 
 
 
