@@ -79,8 +79,12 @@ While originally designed for my Mollavie e-commerce art store, the branding, ar
 This mockup simulates how BlockArt could be promoted through social media to attract a wider artistic audience, share updates, and foster community engagement.
 
 
-![Facebook Page Mockup](https://res.cloudinary.com/dyemjyefz/image/upload/v1749407536/facebook_ncp87y.png)
-  
+
+<details>
+<summary>Facebook Page Mockup</summary>  
+
+![Facebook Page Mockup](https://res.cloudinary.com/dyemjyefz/image/upload/v1749408237/mockuper_koseed.png)
+</details>    
 
 - ### Database planning 
 <hr>  
