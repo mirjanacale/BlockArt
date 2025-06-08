@@ -181,7 +181,7 @@ def post_detail(request, pk):
             new_comment.post = post
             new_comment.user = request.user
             new_comment.save()
-            return redirect('blog-home')
+            return redirect('post-detail', pk=post.pk)
     else:
         comment_form = CommentForm()
     return render(request, 'blog/post_detail.html', {

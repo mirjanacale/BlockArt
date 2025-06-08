@@ -79,12 +79,8 @@ While originally designed for my Mollavie e-commerce art store, the branding, ar
 This mockup simulates how BlockArt could be promoted through social media to attract a wider artistic audience, share updates, and foster community engagement.
 
 
-
-<details>
-<summary>Facebook Page Mockup</summary>  
-
 ![Facebook Page Mockup](https://res.cloudinary.com/dyemjyefz/image/upload/v1748442920/mockuper_zkfnns.png)
-</details>    
+  
 
 - ### Database planning 
 <hr>  
@@ -141,8 +137,6 @@ This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, 
 ![homepage wireframe-mobile & desktop](https://res.cloudinary.com/dyemjyefz/image/upload/v1741533439/image_1_nvylgr.png)
 </details>              
 
-
-## Features
 
 ## Features
 
