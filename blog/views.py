@@ -158,17 +158,17 @@ def custom_403(request, exception):
 
 
 def newsletter_signup(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = NewsletterSignupForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, "You've successfully subscribed to our newsletter!")
-            return redirect('blog-home')
-        else:
-            messages.error(request, "Please correct the errors below.")
+            # Normally you'd save to DB or send to Mailchimp
+            email = form.cleaned_data['email']
+            print(f"New subscriber: {email}")
+            messages.success(request, "Thanks for subscribing!")
+            return redirect('home')
     else:
         form = NewsletterSignupForm()
-    return render(request, 'blog/newsletter.html', {'newsletter_form': form})
+    return render(request, 'subscribe.html', {'form': form})
 
 
 def post_detail(request, pk):

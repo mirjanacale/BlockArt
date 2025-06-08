@@ -40,4 +40,4 @@ class CommentForm(forms.ModelForm):
 
 
 class NewsletterSignupForm(forms.Form):
-    email = forms.EmailField(label="Your email") 
+    email = forms.EmailField()
