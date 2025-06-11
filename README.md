@@ -548,9 +548,28 @@ Added the missing `name` attribute to the home URL path in `blog/urls.py`:
 path('', PostListView.as_view(), name='blog_home')
 ```
 
-##  Future Features
+# Future Features
 
 The following features are not part of the current MVP but are planned for future development:
+
+### Click-to-Enlarge Artwork (Image Modal on Post Detail)
+
+A planned feature is to allow users to **click on an image in the post detail view** to open it in a larger format. This will enhance the viewing experience, especially for users on mobile and tablet devices.
+
+Two implementation options are being considered:
+
+- **Bootstrap Modal**  
+  Use Bootstrap’s built-in modal component to display the image in a pop-up. This integrates smoothly with the existing Bootstrap layout and does not require additional libraries.
+
+- **Lightbox Plugin (Optional)**  
+  Optionally, a lightweight JavaScript lightbox plugin may be used for a more gallery-style preview. This could be useful if future versions allow multiple images per post.
+
+This feature will:
+- Only activate on the **post detail page** (not on the homepage)
+- Avoid conflicts with navigation links
+- Provide a clean, responsive way to showcase artwork
+
+Additional enhancements may include a zoom icon overlay or keyboard-accessible controls for better usability.
 
 
 - **User following**  
@@ -570,6 +589,8 @@ The following features are not part of the current MVP but are planned for futur
 
 - **Tags and filters**  
   Posts can be organized by tags or categories for easier discovery.
+
+  <hr>
 
 ## Manual Testing Summary
 
