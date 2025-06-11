@@ -8,7 +8,26 @@ body {
   justify-content: space-between;
 
 }
-  
+
+.content-wrapper {
+  background-color: rgba(255, 255, 255, 0.85); /* light readable background */
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  color: #222;
+}
+
+.content-wrapper h1,
+.content-wrapper h2,
+.content-wrapper h3,
+.content-wrapper h4,
+.content-wrapper p,
+.content-wrapper label {
+  color: #222 !important; /* makes text stand out better */
+}
+
+
   h1, h2, h3, h4, h5, h6 {
     color: #222222;
   }
@@ -227,4 +246,60 @@ input, textarea, select {
 
 .btn-navbar-green:hover {
     background-color: #163128;
+}
+
+/* Responsive styles for the art frame */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+textarea, input[type="text"] {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.comment {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Reduce the textarea size */
+textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 120px;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  box-shadow: none;
+}
+
+/* Limit the entire comment section width */
+.comment-section-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Make headings tighter and more elegant */
+.comment-section-container h3,
+.comment-section-container h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .art-frame {
+        padding: 5px;
+        border-width: 6px;
+    }
+    
+    .art-frame img {
+        aspect-ratio: 3/4; /* Adjust aspect ratio for smaller screens */
+    }
 }
