@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from users.forms import CommentForm
-from users.models import Comment
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -14,11 +13,7 @@ from django.views.generic import (
 )
 
 from django.contrib.auth.models import User
-from django.views.decorators.csrf import csrf_exempt
 from .forms import NewsletterSignupForm
-from django.shortcuts import render, redirect
-from .forms import CommentForm
-
 from .models import Post
 from .forms import PostForm
 
@@ -161,7 +156,6 @@ def newsletter_signup(request):
     if request.method == "POST":
         form = NewsletterSignupForm(request.POST)
         if form.is_valid():
-            # Normally you'd save to DB or send to Mailchimp
             email = form.cleaned_data['email']
             print(f"New subscriber: {email}")
             messages.success(request, "Thanks for subscribing!")

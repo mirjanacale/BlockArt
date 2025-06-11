@@ -70,6 +70,7 @@ The following user stories were planned and tracked using GitHub Projects during
 | US13| As a user, I want to comment on other artists’ posts.                                 |  Completed |
 | US14| As a user, I want to edit or delete my comments.                                      |  Completed |
 
+---
 
 ### Facebook Page Mockup
 
@@ -85,14 +86,17 @@ This mockup simulates how BlockArt could be promoted through social media to att
 
 ![Facebook Page Mockup](https://res.cloudinary.com/dyemjyefz/image/upload/v1749409650/facebuk2_shro0j.png)
 </details>    
+ 
+<hr>
 
-- ### Database planning 
+### Database planning 
+
 <hr>  
   Database Structure     
      
 ![admin page](https://res.cloudinary.com/dyemjyefz/image/upload/v1748464678/database_ic60sj.png)  
 -   ### Design
-    -  ##  BlockArt Color Scheme
+ ##  BlockArt Color Scheme
 
 | Element      | Color Code | Description |
 |-------------|------------|-------------|
@@ -144,41 +148,41 @@ This color scheme defines the aesthetic of **BlockArt**, giving it a **classic, 
 
 ## Features
 
-- ### Home Page
+### Home Page
 - Lists all published blog posts
 ![home.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563565/Screenshot_2025-03-07_205640_nwq4qw.png)
 
 
-- ### About Page
+### About Page
     - The about page maintains a clean and minimalist design for easy readability. It offers a concise description of the organization’s values and approach.
- ![about.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563301/Screenshot_2025-03-07_205721_uajgpw.png)
+![about.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563301/Screenshot_2025-03-07_205721_uajgpw.png)
 
-- ### New Post Page
+### New Post Page
 
     - The new post page allows users to create content effortlessly with a simple and clean design. It ensures an easy and intuitive navigation experience for posting new updates.
-- ![new_post.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563966/Screenshot_2025-03-09_072530_jljphd.png)
+![new_post.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741563966/Screenshot_2025-03-09_072530_jljphd.png)
 
-- ### Profile Page
+### Profile Page
     - The profile page showcases a user-friendly interface with a simple and clean layout. It enables users to view and manage their personal information with ease.
-- ![profile.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564157/Screenshot_2025-03-07_205835_sjavsx.png)
+![profile.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564157/Screenshot_2025-03-07_205835_sjavsx.png)
 
-- ###  Login / Logout Page
+###  Login / Logout Page
     - The logout page provides a straightforward, easy-to-navigate design. It ensures that users can exit their session quickly and securely.
-- ![login.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564441/Screenshot_2025-03-07_205941_bolx7r.png)
-- ![logout.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564493/Screenshot_2025-03-09_072652_ddfrq9.png)
+![login.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564441/Screenshot_2025-03-07_205941_bolx7r.png)
+![logout.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564493/Screenshot_2025-03-09_072652_ddfrq9.png)
 
 
-- ### Register Page
+### Register Page
     -   Registered users can view their profile page.
     -   Registered users can view their blog posts.
     -   Registered users can create new blog posts.
     -   Registered users can edit their blog posts.
     -   Registered users can delete their blog posts.
-- ![register.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564757/Screenshot_2025-03-07_210019_p7kqzq.png)
+![register.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1741564757/Screenshot_2025-03-07_210019_p7kqzq.png)
 
 
-- ###  Comments Feature
-    - egistered users can now leave comments on any post to encourage discussion and community feedback.  
+###  Comments Feature
+    - Registered users can now leave comments on any post to encourage discussion and community feedback.
      - Comments display the username, date, and message.
     - Only logged-in users can add comments.
     - The "Add Comment" button matches the site's primary green color for consistent branding.  
@@ -213,12 +217,12 @@ This implementation demonstrates understanding of Django’s form handling and C
 
 
 
-- **Interactive Elements**:
+**Interactive Elements**:
 
   - **CRUD Operations**: Enables users to leave feedback or insights about their experience with the tool. 
     - Users can post likes after logging in, fostering community engagement and discussions.
     -Likes include success/error messages for transparency.
-    ![Comment Success ](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599075/Screenshot_2025-03-07_205540_zyf1eg.png)
+![Comment Success ](https://res.cloudinary.com/dyemjyefz/image/upload/v1741599075/Screenshot_2025-03-07_205540_zyf1eg.png)
    
 
 
@@ -294,7 +298,7 @@ This implementation demonstrates understanding of Django’s form handling and C
 - HTML
     - Results of HTML official[W3C validator] (https://validator.w3.org/).
 
-    <hr>
+---
 
 | File         | Preview |
 |-------------|---------|
@@ -306,6 +310,9 @@ This implementation demonstrates understanding of Django’s form handling and C
 | `login.html`  | ![login.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918091/login.html_val_euy3fk.png) |
 | `logout.html`  | ![logout.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747918748/logout.htmlval_vlrqpx.png) |
 | `post_detail.html`  | ![post_detail.html](https://res.cloudinary.com/dyemjyefz/image/upload/v1747921382/post_detailval_c8kjk4.png)
+
+---
+
 ##  HTML Validation
 
 All HTML files were tested using the [W3C Markup Validation Service](https://validator.w3.org/). The results are as follows:
@@ -328,7 +335,7 @@ All HTML files were tested using the [W3C Markup Validation Service](https://val
 
   <hr>
 
-  ##  Custom Error Pages
+##  Custom Error Pages
 
 The BlockArt project includes fully custom-designed error pages to ensure a smooth and branded user experience, even during failures.
 
@@ -460,7 +467,7 @@ The following user goals were identified and tested to ensure a smooth experienc
 
 ---
 
-### 🔹 First-Time Visitor Goals
+###  First-Time Visitor Goals
 
 **Goal:** Understand the site's purpose  
 -  The home page explains that BlockArt is a space for artists to share their work. The title, tagline, and sample posts are visible without logging in.
@@ -473,7 +480,7 @@ The following user goals were identified and tested to ensure a smooth experienc
 
 ---
 
-### 🔹 Returning Visitor Goals
+###  Returning Visitor Goals
 
 **Goal:** Log in and manage posts  
 -  A registered user can log in, access the profile page, view their own posts, and create or update new ones.
@@ -483,7 +490,7 @@ The following user goals were identified and tested to ensure a smooth experienc
 
 ---
 
-### 🔹 Frequent User Goals
+###  Frequent User Goals
 
 **Goal:** Create new posts  
 -  Authenticated users can create blog posts via a simple form with validation and image upload.
@@ -514,11 +521,11 @@ The following user goals were identified and tested to ensure a smooth experienc
  - fix: Removed SMTP settings to avoid WinError 10061 and ensured console email backend is used for password reset in local testing.
 
  PASSWORD RESET   
-     ![APPS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570443/Screenshot_2025-03-07_210331_zuzeq2.png) 
+![APPS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1741570443/Screenshot_2025-03-07_210331_zuzeq2.png) 
 
 
  PASSWORD RESET     
-   ![VIEWS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1746829065/Screenshot_2025-05-09_225405_ppff57.png) h
+![VIEWS.PY](https://res.cloudinary.com/dyemjyefz/image/upload/v1746829065/Screenshot_2025-05-09_225405_ppff57.png) 
 
 
 ---
@@ -530,11 +537,9 @@ The following user goals were identified and tested to ensure a smooth experienc
 While implementing the newsletter subscription feature, the following error occurred upon form submission:
 
 
-
-
 ## Screenshot
 
-![Newsletter Bug Screenshot](https://res.cloudinary.com/dyemjyefz/image/upload/v1749399818/Screenshot_2025-06-08_160852_bcq3ij.png)  
+![Newsletter Bug Screenshot](https://res.cloudinary.com/dyemjyefz/image/upload/v1749399818/Screenshot_2025-06-08_160852_bcq3ij.png)
 
 ### Cause
 
@@ -548,7 +553,10 @@ Added the missing `name` attribute to the home URL path in `blog/urls.py`:
 path('', PostListView.as_view(), name='blog_home')
 ```
 
-# Future Features
+<hr>
+
+
+## Future Features
 
 The following features are not part of the current MVP but are planned for future development:
 
@@ -590,7 +598,7 @@ Additional enhancements may include a zoom icon overlay or keyboard-accessible c
 - **Tags and filters**  
   Posts can be organized by tags or categories for easier discovery.
 
-  <hr>
+---
 
 ## Manual Testing Summary
 
@@ -618,8 +626,7 @@ The following test cases were executed to ensure the functionality of the BlockA
 | Update Profile | Change profile image               | Image updated and displayed    | As expected     | Pass      |
 | submit Newsletter | Valid email                      | Redirect to homepage, success  | As expected     | Pass      |
 
-
-
+---
 
 
 ## Deployment
@@ -652,6 +659,7 @@ Follow these steps to deploy the ArtBlog on Heroku:
 6. Deploy Your App
 - Trigger a manual deployment by clicking "Deploy Branch" or wait for automatic deployments to occur.
 - Once deployed successfully, your blog will be accessible via the provided Heroku URL.
+
 
 
 

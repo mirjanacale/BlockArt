@@ -24,7 +24,7 @@ body {
 .content-wrapper h4,
 .content-wrapper p,
 .content-wrapper label {
-  color: #222 !important; /* makes text stand out better */
+  color: #222 !important; 
 }
 
 
@@ -172,7 +172,7 @@ body {
 
 .btn-navbar-green:hover,
 .btn-navbar-green:focus {
-  background-color: #0b2b18; /* a bit darker on hover */
+  background-color: #0b2b18; 
   color: #fff;
 }
 
@@ -277,7 +277,7 @@ textarea {
   box-shadow: none;
 }
 
-/* Limit the entire comment section width */
+
 .comment-section-container {
   max-width: 700px;
   margin: 0 auto;
@@ -300,6 +300,6 @@ textarea {
     }
     
     .art-frame img {
-        aspect-ratio: 3/4; /* Adjust aspect ratio for smaller screens */
+        aspect-ratio: 3/4;
     }
 }

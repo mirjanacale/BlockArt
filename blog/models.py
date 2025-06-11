@@ -39,12 +39,12 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(
         Post,
-        related_name="blog_comments",   # Already good!
+        related_name="blog_comments",  
         on_delete=models.CASCADE
     )
     user = models.ForeignKey(
         User,
-        related_name="blog_user_comments",  # Make this unique
+        related_name="blog_user_comments",  
         on_delete=models.CASCADE
     )
     body = models.TextField()
