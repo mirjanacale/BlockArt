@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from users.forms import CommentForm
+from users.models import Comment
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -13,7 +14,11 @@ from django.views.generic import (
 )
 
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 from .forms import NewsletterSignupForm
+from django.shortcuts import render, redirect
+
+
 from .models import Post
 from .forms import PostForm
 
