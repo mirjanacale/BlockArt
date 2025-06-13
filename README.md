@@ -1,6 +1,6 @@
 # BlockArt
 
-![ArtBlog Logo](https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/favicon-32x32_zx3pmg.png)
+![BlockArt Logo](https://res.cloudinary.com/dyemjyefz/image/upload/v1741288631/favicon-32x32_zx3pmg.png)
 
 [View the live project here.]( https://mirjanablog-09220d34d6de.herokuapp.com/)
 
